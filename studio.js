@@ -3,7 +3,7 @@
   const defaults={pass:'#c6e6d2',close:'#e8f5ed',open:'#f3e4e5',extra:'#e9edf1',openBar:'#d8a4a7',fire:'#b96312',accent:'#008f85',score:'#f39a28'};
   const fields=[{key:'pass',label:'Passt'},{key:'close',label:'Ähnlich'},{key:'open',label:'Fehlt im Profil'},{key:'extra',label:'Zusätzlich'},{key:'openBar',label:'Fehlt · Leiste',secondary:true},{key:'fire',label:'Fire Skills',secondary:true},{key:'score',label:'Match-Score',secondary:true},{key:'accent',label:'Markenfarbe & Akzent',secondary:true}];
   const storageKey='andtalents-skill-studio-v1';
-  const fontStorageKey='andtalents-skill-studio-font-scale-v2';let fontScale=1.35;
+  const fontStorageKey='andtalents-skill-studio-font-scale-v3';let fontScale=1.4;
   try{const saved=Number(localStorage.getItem(fontStorageKey));if(Number.isFinite(saved)&&saved>=1&&saved<=2)fontScale=saved;}catch{}
   const validHex=v=>typeof v==='string'&&/^#[0-9a-f]{6}$/i.test(v);
   let palette={...defaults};
@@ -68,6 +68,6 @@
   document.getElementById('show-all').addEventListener('click',showAll);document.getElementById('empty-show-all').addEventListener('click',showAll);
   document.getElementById('reset-palette').addEventListener('click',()=>{palette={...defaults};syncControls();persist();broadcast();feedback.textContent='Ursprüngliche Farben wiederhergestellt.';});
   document.getElementById('copy-palette').addEventListener('click',async()=>{const text=fields.map(f=>f.label+': '+palette[f.key].toUpperCase()).join('\n');try{await navigator.clipboard.writeText(text);feedback.textContent='Farbcodes kopiert.';}catch{feedback.textContent='Kopieren nicht verfügbar. Die Hex-Codes können direkt markiert werden.';}});
-  document.getElementById('font-scale').addEventListener('input',e=>setFontScale(Number(e.target.value)/100));document.getElementById('font-smaller').addEventListener('click',()=>setFontScale(fontScale-.05));document.getElementById('font-larger').addEventListener('click',()=>setFontScale(fontScale+.05));document.getElementById('font-reset').addEventListener('click',()=>setFontScale(1.35));
+  document.getElementById('font-scale').addEventListener('input',e=>setFontScale(Number(e.target.value)/100));document.getElementById('font-smaller').addEventListener('click',()=>setFontScale(fontScale-.05));document.getElementById('font-larger').addEventListener('click',()=>setFontScale(fontScale+.05));document.getElementById('font-reset').addEventListener('click',()=>setFontScale(1.4));
   filterViews();broadcast();setFontScale(fontScale);
 })();
