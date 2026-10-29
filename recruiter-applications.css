@@ -13,6 +13,8 @@ body .ra-job-context-label{grid-row:1;min-height:0}
 body .ra-job-title{grid-row:2}
 body .ra-company{grid-row:3}
 body .ra-job-context>.sm-score-wrap,body .ra-job-context>.os-score-wrap{grid-column:2;grid-row:1 / span 3;align-self:start!important;justify-self:end}
+body .ra-job-context .sm-score-label{color:#69727b}
+body .ra-job-context .os-score-label{color:#677773}
 body .ra-decisions{display:flex;gap:12px;justify-content:center}
 body .ra-decision{display:flex;align-items:center;justify-content:center;gap:8px;flex:1;min-width:0;min-height:46px;padding:10px 12px;border-radius:8px;font-size:14px;font-weight:600;line-height:1.25;cursor:pointer}
 body .ra-reject{border:1px solid #ff7c1b;background:#fff;color:#bd4c00}
