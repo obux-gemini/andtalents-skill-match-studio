@@ -21,12 +21,21 @@
     for(const [key,text,path] of [['reject','Ablehnen','M18 6 6 18M6 6l12 12'],['accept','Annehmen (15 €)','m5 12 4 4L19 6']]){
       const button=document.createElement('button');button.type='button';button.className='ra-decision ra-'+key;button.dataset.action=key;button.setAttribute('aria-pressed','false');button.title=text+' – Designvorschau';
       const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');svg.setAttribute('viewBox','0 0 24 24');svg.setAttribute('aria-hidden','true');const line=document.createElementNS('http://www.w3.org/2000/svg','path');line.setAttribute('d',path);svg.append(line);
-      button.append(svg,document.createTextNode(text));
+      const buttonLabel=document.createElement('span');buttonLabel.className='ra-decision-label';buttonLabel.textContent=text;button.append(svg,buttonLabel);
       button.addEventListener('click',()=>{
         const active=button.getAttribute('aria-pressed')!=='true';actions.querySelectorAll('button').forEach(el=>el.setAttribute('aria-pressed','false'));button.setAttribute('aria-pressed',String(active));
         feedback.textContent=active?'Vorschau: Bewerbung '+(key==='accept'?'angenommen.':'abgelehnt.')+' Keine echte Entscheidung übermittelt.':'Vorschau: Entscheidung aufgehoben.';feedback.hidden=false;
       });actions.append(button);
     }
     dock.replaceChildren(actions,feedback);
+    function fitButtonLabels(){
+      for(const button of actions.querySelectorAll('.ra-decision')){
+        const label=button.querySelector('.ra-decision-label'),style=getComputedStyle(button),size=parseFloat(style.fontSize);
+        label.style.setProperty('font-size',size+'px','important');
+        const available=button.clientWidth-parseFloat(style.paddingLeft)-parseFloat(style.paddingRight)-parseFloat(style.columnGap)-button.querySelector('svg').getBoundingClientRect().width;
+        const needed=label.scrollWidth;if(available>0&&needed>available)label.style.setProperty('font-size',Math.max(8,size*(available-1)/needed)+'px','important');
+      }
+    }
+    document.addEventListener('andtalents:typography-updated',fitButtonLabels);window.addEventListener('resize',()=>requestAnimationFrame(fitButtonLabels));fitButtonLabels();
   });
 })();
