@@ -87,5 +87,13 @@
     card.append(head,map);main.append(card);
     const dock=document.createElement('footer');dock.className='jm-dock';dock.setAttribute('aria-label','Feste Jobaktionen');dock.append(actions,feedback);document.querySelector('.ip-home').before(dock);fitPreview();
   }
-  document.addEventListener('DOMContentLoaded',()=>{enhance();renderFire();renderDescription();renderMap();globalThis.lucide?.createIcons({attrs:{width:14,height:14}});new ResizeObserver(report).observe(document.body);parent.postMessage({type:'andtalents:ready'},targetOrigin);report();});
+  function pinCandidateHeader(){
+    if(document.body.dataset.perspective!=='candidate')return;
+    const screen=document.querySelector('.ip-screen'),app=document.querySelector('.jp-app,.os-app'),brand=app?.querySelector('.jp-brandbar,.os-brand'),jobbar=app?.querySelector('.sm-jobbar,.os-jobbar'),overview=app?.querySelector('.sm-overview,.os-overview');
+    if(!screen||!app||!brand||!jobbar||!overview)return;
+    const pinned=document.createElement('div');pinned.className='candidate-fixed-header';pinned.setAttribute('aria-label','Angepinnter Job und Skill-Match');
+    const appStyle=getComputedStyle(app);for(const property of appStyle)if(/^--(?:jp|os)-/.test(property))pinned.style.setProperty(property,appStyle.getPropertyValue(property));
+    const summary=document.createElement('div');summary.className='candidate-fixed-summary';summary.append(jobbar,overview);pinned.append(brand,summary);app.before(pinned);fitPreview();
+  }
+  document.addEventListener('DOMContentLoaded',()=>{enhance();renderFire();renderDescription();renderMap();pinCandidateHeader();globalThis.lucide?.createIcons({attrs:{width:14,height:14}});new ResizeObserver(report).observe(document.body);parent.postMessage({type:'andtalents:ready'},targetOrigin);report();});
 })();
