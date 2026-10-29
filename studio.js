@@ -3,6 +3,8 @@
   const defaults={pass:'#c6e6d2',close:'#e8f5ed',open:'#f3e4e5',extra:'#e9edf1',openBar:'#d8a4a7',fire:'#b96312',accent:'#008f85',score:'#f39a28'};
   const fields=[{key:'pass',label:'Passt'},{key:'close',label:'Ähnlich'},{key:'open',label:'Fehlt im Profil'},{key:'extra',label:'Zusätzlich'},{key:'openBar',label:'Fehlt · Leiste',secondary:true},{key:'fire',label:'Fire Skills',secondary:true},{key:'score',label:'Match-Score',secondary:true},{key:'accent',label:'Markenfarbe & Akzent',secondary:true}];
   const storageKey='andtalents-skill-studio-v1';
+  const fontStorageKey='andtalents-skill-studio-font-scale-v1';let fontScale=1;
+  try{const saved=Number(localStorage.getItem(fontStorageKey));if(Number.isFinite(saved)&&saved>=1&&saved<=2)fontScale=saved;}catch{}
   const validHex=v=>typeof v==='string'&&/^#[0-9a-f]{6}$/i.test(v);
   let palette={...defaults};
   try{const saved=JSON.parse(localStorage.getItem(storageKey));for(const key of Object.keys(defaults))if(validHex(saved?.[key]))palette[key]=saved[key].toLowerCase();}catch{}
@@ -30,21 +32,22 @@
   function syncControls(){for(const [key,control] of controls){control.picker.value=palette[key];control.text.value=palette[key];control.text.removeAttribute('aria-invalid');}}
   const targetOrigin=location.protocol==='file:'?'*':location.origin;
   const allowedOrigin=origin=>location.protocol==='file:'?(origin==='null'||origin===location.origin):origin===location.origin;
-  function sendPalette(frame){if(frame.contentWindow){frame.contentWindow.postMessage({type:'andtalents:palette',palette},targetOrigin);if(window.STUDIO_JOB_MAP)frame.contentWindow.postMessage({type:'andtalents:job-map',src:window.STUDIO_JOB_MAP},targetOrigin);if(window.STUDIO_LOGO)frame.contentWindow.postMessage({type:'andtalents:logo',src:window.STUDIO_LOGO},targetOrigin);}}
+  function sendPalette(frame){if(frame.contentWindow){frame.contentWindow.postMessage({type:'andtalents:palette',palette},targetOrigin);frame.contentWindow.postMessage({type:'andtalents:font-scale',scale:fontScale},targetOrigin);if(window.STUDIO_JOB_MAP)frame.contentWindow.postMessage({type:'andtalents:job-map',src:window.STUDIO_JOB_MAP},targetOrigin);if(window.STUDIO_LOGO)frame.contentWindow.postMessage({type:'andtalents:logo',src:window.STUDIO_LOGO},targetOrigin);}}
+  function setFontScale(value){fontScale=Math.min(2,Math.max(1,Math.round(value*100)/100));document.getElementById('font-scale').value=String(Math.round(fontScale*100));document.getElementById('font-scale-value').textContent=Math.round(fontScale*100)+' %';document.getElementById('font-smaller').disabled=fontScale<=1;document.getElementById('font-larger').disabled=fontScale>=2;document.getElementById('font-scale').setAttribute('aria-valuetext',Math.round(fontScale*100)+' Prozent');try{localStorage.setItem(fontStorageKey,String(fontScale));}catch{}globalThis.StudioTextScale?.apply(fontScale);for(const frame of frames.values())frame.contentWindow?.postMessage({type:'andtalents:font-scale',scale:fontScale},targetOrigin);}
   function broadcast(){document.documentElement.style.setProperty('--teal',palette.accent);for(const frame of frames.values())sendPalette(frame);}
   function setColor(key,value){palette[key]=value.toLowerCase();if(key==='open')palette.openBar=palette.open;syncControls();persist();broadcast();feedback.textContent='Palette für alle Ansichten aktualisiert.';}
   for(const view of views){
     const card=document.createElement('article');card.className='view-card';card.dataset.view=view.id;if(view.role==='recruiter')card.classList.add('is-recruiter');
     const header=document.createElement('header'),copy=document.createElement('div'),title=document.createElement('h2'),meta=document.createElement('p'),tag=document.createElement('span');
     title.textContent=view.title;meta.textContent=(view.role==='candidate'?'Kandidaten-Perspektive':'Recruiter-Perspektive')+' · '+(view.format==='pills'?'Pillen':'Liste');tag.className='view-tag';tag.textContent=view.special?'Sonderfall':'201:437';
-    copy.append(title,meta);header.append(copy,tag);const frame=document.createElement('iframe');frame.title=view.title+' – '+meta.textContent;frame.loading='lazy';if(window.STUDIO_DOCUMENTS?.[view.file])frame.srcdoc=window.STUDIO_DOCUMENTS[view.file];else frame.src=view.file+'?v='+(view.role==='recruiter'?'fire-score-20261029-9':'industry-20261029-2');frame.dataset.view=view.id;frame.addEventListener('load',()=>sendPalette(frame));
+    copy.append(title,meta);header.append(copy,tag);const frame=document.createElement('iframe');frame.title=view.title+' – '+meta.textContent;frame.loading='lazy';if(window.STUDIO_DOCUMENTS?.[view.file])frame.srcdoc=window.STUDIO_DOCUMENTS[view.file];else frame.src=view.file+'?v=font-scale-20261029-10';frame.dataset.view=view.id;frame.addEventListener('load',()=>sendPalette(frame));
     card.append(header,frame);grid.append(card);view.card=card;frames.set(view.id,frame);
   }
   window.addEventListener('message',event=>{
     if(!allowedOrigin(event.origin))return;
     const frame=[...frames.values()].find(f=>f.contentWindow===event.source);if(!frame)return;
     if(event.data?.type==='andtalents:ready')sendPalette(frame);
-    if(event.data?.type==='andtalents:height'&&Number.isFinite(event.data.height)&&event.data.height>100&&event.data.height<1600)frame.style.height=Math.ceil(event.data.height)+'px';
+    if(event.data?.type==='andtalents:height'&&Number.isFinite(event.data.height)&&event.data.height>100&&event.data.height<4000)frame.style.height=Math.ceil(event.data.height)+'px';
   });
   function filterViews(){
     document.body.classList.toggle('is-recruiter-view',filters.role==='recruiter');
@@ -65,5 +68,6 @@
   document.getElementById('show-all').addEventListener('click',showAll);document.getElementById('empty-show-all').addEventListener('click',showAll);
   document.getElementById('reset-palette').addEventListener('click',()=>{palette={...defaults};syncControls();persist();broadcast();feedback.textContent='Ursprüngliche Farben wiederhergestellt.';});
   document.getElementById('copy-palette').addEventListener('click',async()=>{const text=fields.map(f=>f.label+': '+palette[f.key].toUpperCase()).join('\n');try{await navigator.clipboard.writeText(text);feedback.textContent='Farbcodes kopiert.';}catch{feedback.textContent='Kopieren nicht verfügbar. Die Hex-Codes können direkt markiert werden.';}});
-  filterViews();broadcast();
+  document.getElementById('font-scale').addEventListener('input',e=>setFontScale(Number(e.target.value)/100));document.getElementById('font-smaller').addEventListener('click',()=>setFontScale(fontScale-.05));document.getElementById('font-larger').addEventListener('click',()=>setFontScale(fontScale+.05));document.getElementById('font-reset').addEventListener('click',()=>setFontScale(1));
+  filterViews();broadcast();setFontScale(fontScale);
 })();

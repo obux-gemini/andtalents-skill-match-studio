@@ -16,3 +16,20 @@ button,input,select,textarea{font-family:var(--studio-font)}
 .view-grid.is-application-list{grid-template-columns:minmax(0,1fr);max-width:414px;margin-inline:auto;gap:24px}
 .view-grid.is-application-list .view-card.is-recruiter{max-width:414px}
 body.is-recruiter-view{background:#fff;min-height:100vh}
+.font-panel{border-bottom:1px solid var(--line);padding:0 0 20px;margin:0 0 22px}
+.font-panel h3{font-size:13px;font-weight:600;margin:0 0 10px}
+.font-scale-controls{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.font-scale-controls button{width:36px;min-height:34px;padding:4px;border:1px solid var(--line);border-radius:7px;background:#fff;font-size:18px;line-height:1.2}
+.font-scale-controls output{font-size:14px;font-variant-numeric:tabular-nums}
+#font-scale{display:block;width:100%;margin:12px 0;accent-color:var(--teal)}
+#font-reset{display:block;width:100%;border:0;background:transparent;color:var(--teal);font-size:11px;padding:4px 0;white-space:normal}
+.font-scale-controls button:disabled{opacity:.4}
+@media(min-width:761px){.palette-panel{max-height:calc(100vh - 48px);overflow-y:auto;scrollbar-width:thin}}
+@media(max-width:760px){.font-panel{max-width:100%}}
+body[data-font-scale]:not([data-font-scale="1"]) .segmented{flex-wrap:wrap;max-width:100%}
+body[data-font-scale]:not([data-font-scale="1"]) .segmented button{white-space:normal;overflow-wrap:anywhere}
+body[data-font-scale]:not([data-font-scale="1"]) .site-header{height:auto;min-height:76px;flex-wrap:wrap;padding-block:14px}
+body[data-font-scale]:not([data-font-scale="1"]) .palette-actions button{padding:8px;overflow-wrap:anywhere}
+body[data-font-scale]:not([data-font-scale="1"]) .job-select{min-width:0;max-width:100%}
+body[data-font-scale]:not([data-font-scale="1"]) .job-select select{min-width:0;width:100%;max-width:100%}
+body[data-font-scale]:not([data-font-scale="1"]) .page-heading h1{overflow-wrap:anywhere}

@@ -9,6 +9,7 @@
   window.addEventListener('message',event=>{
     if(event.source!==parent||!allowedOrigin(event.origin))return;
     if(event.data?.type==='andtalents:palette')apply(event.data.palette);
+    if(event.data?.type==='andtalents:font-scale'&&typeof event.data.scale==='number')globalThis.StudioTextScale?.apply(event.data.scale);
     if(event.data?.type==='andtalents:job-map'&&typeof event.data.src==='string'&&/^data:image\/svg\+xml;base64,[A-Za-z0-9+/=]+$/.test(event.data.src)&&event.data.src.length<500000){const img=document.querySelector('.jm-card img');if(img&&img.src!==event.data.src)img.src=event.data.src;}
     if(event.data?.type==='andtalents:logo'&&typeof event.data.src==='string'&&/^data:image\/jpeg;base64,[A-Za-z0-9+/=]+$/.test(event.data.src)&&event.data.src.length<250000){const img=document.querySelector('.studio-logo');if(img&&img.src!==event.data.src)img.src=event.data.src;}
   });
@@ -23,6 +24,7 @@
   }
   function fitPreview(){const shell=document.querySelector('.ip-shell');if(shell)shell.style.zoom=String(Math.min(1,innerWidth/414));fitMap();report();}
   window.addEventListener('resize',fitPreview);
+  document.addEventListener('andtalents:typography-updated',()=>requestAnimationFrame(fitPreview));
   function renderFire(){
     document.body.dataset.fireMode='bar';fitPreview();
     document.querySelectorAll('.fs-panel,.fs-bar-marker').forEach(el=>el.remove());
