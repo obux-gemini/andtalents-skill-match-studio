@@ -15,3 +15,4 @@ button,input,select,textarea{font-family:var(--studio-font)}
 .view-card.is-recruiter iframe{max-width:414px}
 .view-grid.is-application-list{grid-template-columns:minmax(0,1fr);max-width:414px;margin-inline:auto;gap:24px}
 .view-grid.is-application-list .view-card.is-recruiter{max-width:414px}
+body.is-recruiter-view{background:#fff;min-height:100vh}

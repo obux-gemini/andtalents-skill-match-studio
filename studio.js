@@ -47,6 +47,7 @@
     if(event.data?.type==='andtalents:height'&&Number.isFinite(event.data.height)&&event.data.height>100&&event.data.height<1600)frame.style.height=Math.ceil(event.data.height)+'px';
   });
   function filterViews(){
+    document.body.classList.toggle('is-recruiter-view',filters.role==='recruiter');
     const stacked=filters.role==='recruiter'&&applicationLayout==='applications';grid.classList.toggle('is-application-list',stacked);document.getElementById('application-layout').hidden=filters.role!=='recruiter';document.querySelectorAll('[data-layout]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.layout===applicationLayout)));
     let visible=0;for(const view of views){const show=(filters.role==='all'||view.role===filters.role)&&(filters.format==='all'||view.format===filters.format)&&(filters.job==='all'||view.job===filters.job||(filters.job==='extreme'&&extremeJobs.includes(view.job)))&&(!view.special||filters.special);view.card.hidden=!show;if(show)visible++;}
     document.getElementById('result-count').textContent=`${visible} von ${views.length} Ansichten`;
