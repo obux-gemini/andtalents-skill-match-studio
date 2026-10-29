@@ -6,7 +6,12 @@
     const shell=document.querySelector('.ip-shell'),screen=document.querySelector('.ip-screen');shell.classList.add('ra-application');shell.setAttribute('aria-label','Bewerbung von Alex M.');shell.setAttribute('role','article');
     const context=document.createElement('header');context.className='ra-job-context';context.setAttribute('aria-label','Zugehöriger Job');
     const label=document.createElement('div');label.className='ra-job-context-label';label.textContent='Bewerbung auf';
-    const job=document.createElement('h3');job.className='ra-job-title';job.textContent=meta.textContent.replace(/\u00ad/g,'');context.append(label,job);screen.prepend(context);
+    const job=document.createElement('h3');job.className='ra-job-title';job.textContent=meta.textContent.replace(/\u00ad/g,'');
+    // Fictional employers for the existing design examples.
+    const companies={buchhaltung:'Hanse Handel GmbH',debitoren:'Nordhafen Logistik GmbH',controlling:'Elbwerk Industrie GmbH',finanzbuchhaltung:'HanseFinanz Services GmbH',bilanzbuchhaltung:'Elbkontor Wirtschaftsprüfung GmbH',softwareentwicklung:'Nordlicht Software GmbH'};
+    const rootId=shell.parentElement.id,jobId=Object.keys(companies).find(key=>rootId.endsWith('-'+key));
+    const company=document.createElement('div');company.className='ra-company';company.textContent=companies[jobId]||companies.buchhaltung;company.setAttribute('aria-label','Unternehmen: '+company.textContent);
+    context.append(label,job,company);screen.prepend(context);
     meta.textContent='Hamburg';meta.setAttribute('aria-label','Wohnort: Hamburg');
     main.querySelectorAll('.jd-summary,.jm-card').forEach(el=>el.remove());
     const dock=document.querySelector('.jm-dock');if(!dock)return;

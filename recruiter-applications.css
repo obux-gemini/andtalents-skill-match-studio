@@ -7,6 +7,7 @@ body .ra-application .ra-dock .jm-feedback{position:static;margin:12px 0 0;box-s
 body .ra-job-context{margin:0;padding:14px 16px;background:#f5f8f7;border-bottom:1px solid #e3ebe7;font-family:var(--studio-font)}
 body .ra-job-context-label{font-size:11px;line-height:1.4;color:#61716b;margin-bottom:4px}
 body .ra-job-title{font-size:14px;line-height:1.4;font-weight:600;margin:0;overflow-wrap:break-word;hyphens:auto}
+body .ra-company{margin-top:5px;color:#61716b;font-size:12px;line-height:1.4;overflow-wrap:break-word}
 body .ra-decisions{display:flex;gap:12px;justify-content:center}
 body .ra-decision{display:flex;align-items:center;justify-content:center;gap:8px;flex:1;min-width:0;min-height:46px;padding:10px 12px;border-radius:8px;font-size:14px;font-weight:600;line-height:1.25;cursor:pointer}
 body .ra-reject{border:1px solid #ff7c1b;background:#fff;color:#bd4c00}
