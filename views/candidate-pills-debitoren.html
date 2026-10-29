@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Kandidat · Pillen · debitoren · &TALENTS</title><link rel="stylesheet" href="../view-bridge.css?v=industry-20261029-2"><script src="../icons.js?v=industry-20261029-2" defer></script><script src="../view-bridge.js?v=industry-20261029-2" defer></script></head><body>
+<style>
+  #skill-pills-bar-debitoren { width:100%; padding:20px 8px; }
+  #skill-pills-bar-debitoren .jp-app {
+    --jp-paper:#ffffff; --jp-ink:#17202a; --jp-muted:#69727b; --jp-border:#e5e8e9;
+    --jp-teal:#009e92; --jp-brand:#008f87; --jp-orange:#f39a28; --jp-soft:#f1f4f4;
+    --jp-pass:#c6e6d2; --jp-close:#e8f5ed; --jp-gap:#f3e4e5; --jp-extra:#e9edf1; --jp-focus:#1c5855; --jp-fire:#b96312;
+    width:100%; max-width:390px; margin:auto; background:var(--jp-paper); color:var(--jp-ink);
+    border:1px solid var(--jp-border); border-radius:12px; overflow:hidden;
+    font-family:Arial,sans-serif; font-size:14px; line-height:1.35; color-scheme:light;
+  }
+  #skill-pills-bar-debitoren .jp-app * { box-sizing:border-box; }
+  #skill-pills-bar-debitoren button { font-family:inherit; line-height:inherit; }
+  #skill-pills-bar-debitoren button:focus-visible { outline:2px solid var(--jp-focus); outline-offset:2px; }
+  #skill-pills-bar-debitoren .jp-brandbar { height:49px; display:flex; align-items:center; justify-content:center; border-bottom:1px solid var(--jp-border); }
+  #skill-pills-bar-debitoren .jp-logo { color:var(--jp-brand); font-size:19px; letter-spacing:-.7px; }
+  #skill-pills-bar-debitoren .jp-logo b { color:var(--jp-paper); background:var(--jp-orange); font-weight:500; padding:0 1px; }
+  #skill-pills-bar-debitoren .jp-picker { display:flex; gap:5px; padding:10px 12px 0; }
+  #skill-pills-bar-debitoren .jp-job-button { flex:1; min-width:0; border:0; border-radius:999px; padding:8px 6px; min-height:36px; font-size:12px; background:var(--jp-soft); color:var(--jp-ink); }
+  #skill-pills-bar-debitoren .jp-job-button[aria-pressed="true"] { background:var(--jp-teal); color:var(--jp-paper); }
+  #skill-pills-bar-debitoren .jp-main { padding:13px 12px 14px; }
+  #skill-pills-bar-debitoren .jp-jobbar { display:flex; align-items:center; justify-content:space-between; gap:10px; min-height:69px; margin-bottom:13px; }
+  #skill-pills-bar-debitoren .jp-title { font-size:15px; font-weight:500; min-height:40px; display:flex; align-items:center; }
+  #skill-pills-bar-debitoren .jp-company { color:var(--jp-muted); font-size:11px; }
+  #skill-pills-bar-debitoren .jp-score { flex:none; min-width:82px; padding:7px 12px; border-radius:999px; background:var(--jp-teal); color:var(--jp-paper); text-align:center; }
+  #skill-pills-bar-debitoren .jp-score strong { font-size:23px; font-weight:500; display:block; font-variant-numeric:tabular-nums; }
+  #skill-pills-bar-debitoren .jp-score small { font-size:11px; display:block; }
+  #skill-pills-bar-debitoren .jp-legend { display:grid; grid-template-columns:1fr 1fr; gap:10px 12px; padding:0; margin-bottom:10px; font-size:14px; }
+  #skill-pills-bar-debitoren .jp-legend > span { display:flex; gap:8px; align-items:center; min-width:0; }
+  #skill-pills-bar-debitoren .jp-swatch { display:flex; align-items:center; justify-content:center; width:28px; height:28px; flex:none; border-radius:7px; font-size:15px; font-weight:500; font-variant-numeric:tabular-nums; }
+  #skill-pills-bar-debitoren [data-kind="pass"] { background:var(--jp-pass); }
+  #skill-pills-bar-debitoren [data-kind="close"] { background:var(--jp-close); }
+  #skill-pills-bar-debitoren [data-kind="gap"] { background:var(--jp-gap); }
+  #skill-pills-bar-debitoren [data-kind="extra"] { background:var(--jp-extra); }
+  #skill-pills-bar-debitoren .jp-toggle { display:block; max-width:100%; margin:0 0 12px; min-height:36px; padding:8px 11px; border:1px solid var(--jp-border); border-radius:8px; background:var(--jp-paper); color:var(--jp-brand); font-size:12px; text-align:left; }
+  #skill-pills-bar-debitoren .jp-fire { display:inline-flex; align-items:center; gap:3px; flex:none; white-space:nowrap; color:var(--jp-fire); font-size:11px; }
+  #skill-pills-bar-debitoren .jp-flame { display:block; width:14px; height:14px; flex:none; stroke:currentColor; stroke-width:2; fill:none; }
+  #skill-pills-bar-debitoren .jp-fire[data-fire="both"] .jp-flame { fill:currentColor; }
+  #skill-pills-bar-debitoren .jp-own-row { display:inline-flex; align-items:center; gap:5px; max-width:100%; min-width:0; }
+  #skill-pills-bar-debitoren .jp-cloud { display:flex; flex-wrap:wrap; gap:8px 6px; align-content:flex-start; align-items:flex-start; }
+  #skill-pills-bar-debitoren .jp-pill { display:inline-flex; align-items:center; min-height:34px; max-width:100%; padding:7px 10px; border:1px solid transparent; border-radius:999px; font-size:12px; text-align:left; color:var(--jp-ink); overflow-wrap:anywhere; }
+  #skill-pills-bar-debitoren .jp-pill[aria-pressed="true"] { border-color:var(--jp-focus); box-shadow:0 0 0 1px var(--jp-focus); }
+  #skill-pills-bar-debitoren .jp-own-name { min-width:0; max-width:100%; }
+  #skill-pills-bar-debitoren .jp-pill.is-expanded { flex-direction:column; align-items:flex-start; gap:6px; border-radius:15px; }
+  #skill-pills-bar-debitoren .jp-job-inline { display:block; max-width:100%; font-size:11px; color:#53665a; }
+  #skill-pills-bar-debitoren .jp-job-inline[hidden] { display:none; }
+  #skill-pills-bar-debitoren .jp-detail { margin-top:12px; padding:10px; border:1px solid var(--jp-border); border-radius:8px; font-size:12px; }
+  #skill-pills-bar-debitoren .jp-detail[hidden] { display:none; }
+  #skill-pills-bar-debitoren .jp-detail-title { font-size:11px; color:var(--jp-muted); margin-bottom:5px; }
+  #skill-pills-bar-debitoren .jp-detail-line + .jp-detail-line { margin-top:4px; }
+  #skill-pills-bar-debitoren .jp-sr-only { position:absolute; width:1px; height:1px; margin:-1px; padding:0; border:0; overflow:hidden; clip-path:inset(50%); }
+  @media (max-width:400px) {
+    #skill-pills-bar-debitoren { padding:12px 0; }
+    #skill-pills-bar-debitoren .jp-main { padding-inline:10px; }
+  }
+  @media (pointer:coarse) { #skill-pills-bar-debitoren .jp-job-button, #skill-pills-bar-debitoren .jp-pill, #skill-pills-bar-debitoren .jp-toggle { min-height:44px; } }
+
+  #skill-pills-bar-debitoren { padding:14px 8px; }
+  #skill-pills-bar-debitoren .ip-shell { width:100%; max-width:414px; margin:auto; padding:6px; box-sizing:border-box; border-radius:48px; background:#1c1e20; }
+  #skill-pills-bar-debitoren .ip-shell * { box-sizing:border-box; }
+  #skill-pills-bar-debitoren .ip-screen { width:100%; aspect-ratio:201 / 437; display:flex; flex-direction:column; container-type:inline-size; background:#fff; color:#141716; border-radius:42px; overflow:hidden; }
+  #skill-pills-bar-debitoren .ip-status { height:52px; flex:none; padding:10px 19px 5px; display:flex; align-items:center; justify-content:space-between; gap:9px; font:13px/1 Arial,sans-serif; }
+  #skill-pills-bar-debitoren .ip-clock { width:42px; text-align:center; font-weight:500; }
+  #skill-pills-bar-debitoren .ip-island { width:112px; height:28px; flex:none; border-radius:999px; background:#101214; }
+  #skill-pills-bar-debitoren .ip-indicators { display:flex; align-items:center; gap:4px; width:59px; }
+  #skill-pills-bar-debitoren .ip-indicators svg { width:16px; height:16px; flex:none; }
+  #skill-pills-bar-debitoren .ip-screen .jp-app { width:100%; max-width:none; margin:0; min-height:0; flex:1; border:0; border-radius:0; overflow:visible; }
+  #skill-pills-bar-debitoren .jp-jobbar > div:first-child { min-width:0; flex:1; }
+  #skill-pills-bar-debitoren .jp-title { overflow-wrap:anywhere; hyphens:auto; }
+  #skill-pills-bar-debitoren .ip-home { height:26px; flex:none; display:flex; align-items:center; justify-content:center; background:#fff; }
+  #skill-pills-bar-debitoren .ip-home span { width:110px; height:4px; border-radius:999px; background:#141716; }
+  @media (max-width:400px) { #skill-pills-bar-debitoren { padding:10px 0; } }
+  @container (max-width:370px) {
+    #skill-pills-bar-debitoren .jp-brandbar { height:36px; }
+    #skill-pills-bar-debitoren .jp-picker { padding:7px 10px 0; gap:4px; }
+    #skill-pills-bar-debitoren .jp-main { padding:8px 10px 10px; }
+    #skill-pills-bar-debitoren .jp-jobbar { min-height:56px; margin-bottom:9px; }
+    #skill-pills-bar-debitoren .jp-title { min-height:32px; font-size:14px; }
+    #skill-pills-bar-debitoren .jp-legend { font-size:12px; gap:7px 8px; margin-bottom:8px; }
+    #skill-pills-bar-debitoren .jp-legend > span { gap:6px; }
+    #skill-pills-bar-debitoren .jp-swatch { width:26px; height:26px; }
+    #skill-pills-bar-debitoren .jp-toggle { margin-bottom:9px; padding:6px 9px; }
+    #skill-pills-bar-debitoren .jp-cloud { gap:6px 5px; }
+    #skill-pills-bar-debitoren .jp-pill { padding:5px 8px; min-height:30px; }
+  }
+  @container (max-width:320px) {
+    #skill-pills-bar-debitoren .ip-status { height:44px; padding:8px 15px 4px; }
+    #skill-pills-bar-debitoren .ip-island { width:94px; height:24px; }
+    #skill-pills-bar-debitoren .ip-home { height:22px; }
+    #skill-pills-bar-debitoren .jp-brandbar { height:31px; }
+    #skill-pills-bar-debitoren .jp-logo { font-size:18px; }
+    #skill-pills-bar-debitoren .jp-picker { padding:5px 8px 0; gap:3px; }
+    #skill-pills-bar-debitoren .jp-job-button { padding:5px 3px; min-height:30px; font-size:11px; }
+    #skill-pills-bar-debitoren .jp-main { padding:6px 8px 8px; }
+    #skill-pills-bar-debitoren .jp-jobbar { min-height:48px; gap:6px; margin-bottom:7px; }
+    #skill-pills-bar-debitoren .jp-title { font-size:13px; min-height:27px; }
+    #skill-pills-bar-debitoren .jp-score { min-width:70px; padding:5px 9px; }
+    #skill-pills-bar-debitoren .jp-score strong { font-size:21px; }
+    #skill-pills-bar-debitoren .jp-legend { font-size:11px; gap:5px 6px; margin-bottom:6px; }
+    #skill-pills-bar-debitoren .jp-legend > span { gap:4px; }
+    #skill-pills-bar-debitoren .jp-swatch { width:23px; height:23px; border-radius:6px; font-size:13px; }
+    #skill-pills-bar-debitoren .jp-toggle { min-height:30px; font-size:11px; padding:5px 7px; margin-bottom:7px; }
+    #skill-pills-bar-debitoren .jp-cloud { gap:5px 4px; }
+    #skill-pills-bar-debitoren .jp-pill { min-height:27px; padding:4px 7px; font-size:11px; }
+    #skill-pills-bar-debitoren .jp-pill.is-expanded { gap:3px; border-radius:12px; }
+    #skill-pills-bar-debitoren .jp-own-row { gap:4px; }
+    #skill-pills-bar-debitoren .jp-flame { width:12px; height:12px; }
+  }
+  @container (max-width:290px) {
+    #skill-pills-bar-debitoren .jp-brandbar { height:28px; }
+    #skill-pills-bar-debitoren .jp-picker { padding-top:3px; }
+    #skill-pills-bar-debitoren .jp-main { padding-top:4px; }
+    #skill-pills-bar-debitoren .jp-jobbar { margin-bottom:5px; }
+    #skill-pills-bar-debitoren .jp-legend { gap:4px 5px; margin-bottom:5px; }
+    #skill-pills-bar-debitoren .jp-toggle { margin-bottom:5px; }
+    #skill-pills-bar-debitoren .jp-cloud { gap:4px 3px; }
+    #skill-pills-bar-debitoren .jp-pill { min-height:21px; padding:2px 6px; }
+    #skill-pills-bar-debitoren .jp-pill.is-expanded { gap:2px; }
+  }
+
+  #skill-pills-bar-debitoren .jp-app { --jp-ink:#19332f; --jp-muted:#677773; --jp-teal:#008f85; --jp-brand:#008f85; }
+  #skill-pills-bar-debitoren .jp-brandbar { height:42px; }
+  #skill-pills-bar-debitoren .jp-main { padding:12px 14px 11px; }
+  #skill-pills-bar-debitoren .sm-jobbar { display:flex; align-items:center; justify-content:space-between; gap:12px; min-height:54px; }
+  #skill-pills-bar-debitoren .sm-jobbar > div:first-child { min-width:0; flex:1; }
+  #skill-pills-bar-debitoren .sm-title { margin:0; font-size:16px; line-height:1.3; font-weight:500; overflow-wrap:anywhere; hyphens:auto; }
+  #skill-pills-bar-debitoren .sm-meta { margin-top:4px; font-size:11px; color:var(--jp-muted); }
+  #skill-pills-bar-debitoren .sm-score-wrap { flex:none; text-align:right; }
+  #skill-pills-bar-debitoren .sm-score { display:block; font-size:35px; line-height:1.05; font-weight:500; letter-spacing:-1px; font-variant-numeric:tabular-nums; color:var(--jp-teal); }
+  #skill-pills-bar-debitoren .sm-score-label { font-size:11px; color:var(--jp-muted); }
+  #skill-pills-bar-debitoren .sm-overview { margin-top:12px; padding-bottom:14px; }
+  #skill-pills-bar-debitoren .sm-coverage { display:grid; grid-template-columns:repeat(10,minmax(0,1fr)); gap:4px; margin-bottom:7px; }
+  #skill-pills-bar-debitoren .sm-unit { height:7px; border-radius:2px; background:var(--jp-pass); }
+  #skill-pills-bar-debitoren .sm-unit[data-status="close"] { background:var(--jp-close); }
+  #skill-pills-bar-debitoren .sm-unit[data-status="gap"] { background:#d8a4a7; }
+  #skill-pills-bar-debitoren .sm-counts { display:flex; align-items:center; justify-content:space-between; gap:8px; font-size:12px; color:var(--jp-muted); }
+  #skill-pills-bar-debitoren .sm-counts strong { color:var(--jp-ink); font-weight:500; font-variant-numeric:tabular-nums; }
+  @container (max-width:370px) {
+    #skill-pills-bar-debitoren .jp-brandbar { height:35px; }
+    #skill-pills-bar-debitoren .jp-main { padding:8px 11px; }
+    #skill-pills-bar-debitoren .sm-jobbar { min-height:48px; }
+    #skill-pills-bar-debitoren .sm-title { font-size:15px; }
+    #skill-pills-bar-debitoren .sm-score { font-size:32px; }
+    #skill-pills-bar-debitoren .sm-overview { margin-top:9px; padding-bottom:11px; }
+  }
+  @container (max-width:320px) {
+    #skill-pills-bar-debitoren .jp-brandbar { height:31px; }
+    #skill-pills-bar-debitoren .jp-main { padding:6px 9px; }
+    #skill-pills-bar-debitoren .sm-jobbar { min-height:43px; gap:8px; }
+    #skill-pills-bar-debitoren .sm-title { font-size:14px; }
+    #skill-pills-bar-debitoren .sm-meta { margin-top:2px; }
+    #skill-pills-bar-debitoren .sm-score { font-size:29px; }
+    #skill-pills-bar-debitoren .sm-overview { margin-top:7px; padding-bottom:8px; }
+    #skill-pills-bar-debitoren .sm-coverage { margin-bottom:5px; }
+    #skill-pills-bar-debitoren .sm-counts { font-size:11px; }
+  }
+  @container (max-width:290px) {
+    #skill-pills-bar-debitoren .jp-detail { padding:5px 6px; margin-top:6px; font-size:11px; line-height:1.25; }
+    #skill-pills-bar-debitoren .jp-detail-title { margin-bottom:3px; }
+    #skill-pills-bar-debitoren .jp-detail-line + .jp-detail-line { margin-top:2px; }
+    #skill-pills-bar-debitoren .jp-main:has(.jp-detail:not([hidden])) .jp-cloud { gap:2px 3px; }
+    #skill-pills-bar-debitoren .jp-main:has(.jp-detail:not([hidden])) .jp-pill { padding-block:1px; min-height:19px; }
+  }
+</style>
+<div id="skill-pills-bar-debitoren" class="viz-dotted-background">
+  <div class="ip-shell" aria-label="Handyrahmen mit Display-Seitenverhältnis 201 zu 437">
+    <div class="ip-screen">
+      <div class="ip-status" aria-hidden="true"><span class="ip-clock">9:41</span><span class="ip-island"></span><span class="ip-indicators"><i data-lucide="signal"></i><i data-lucide="wifi"></i><i data-lucide="battery-full"></i></span></div>
+  <section class="jp-app" lang="de" aria-label="Skill-Pillen mit kompakter Match-Leiste">
+    <header class="jp-brandbar"><span class="jp-logo"><b>&amp;</b>TALENTS</span></header>
+    <div class="jp-main">
+      <div class="sm-jobbar">
+        <div><h2 class="sm-title"></h2><div class="sm-meta">Hamburg</div></div>
+        <div class="sm-score-wrap"><span class="sm-score"></span><span class="sm-score-label">Match-Score</span></div>
+      </div>
+      <section class="sm-overview" aria-label="Abgleich der zehn Job-Skills">
+        <div class="sm-coverage" role="img"></div>
+        <div class="sm-counts"><span><strong data-count="pass">0</strong> passen</span><span><strong data-count="close">0</strong> ähnlich</span><span><strong data-count="gap">0</strong> fehlen</span></div>
+      </section>
+      <div class="jp-cloud jp-unified" aria-label="Eigene Skills in fester Reihenfolge, ähnliche Job-Bezeichnungen in der jeweiligen Pille, danach fehlende Job-Skills"></div>
+      <div class="jp-detail" aria-live="polite" hidden></div>
+      <div class="jp-announcement jp-sr-only" role="status" aria-live="polite"></div>
+    </div>
+  </section>
+      <div class="ip-home" aria-hidden="true"><span></span></div>
+    </div>
+  </div>
+</div>
+<script>
+(() => {
+  const root=document.getElementById('skill-pills-bar-debitoren');
+  const app=root.querySelector('.jp-app'),cloud=root.querySelector('.jp-unified'),detail=root.querySelector('.jp-detail');
+  const profile=[
+    {id:'p1',name:'Finanzbuchhaltung',fire:true}, {id:'p2',name:'DATEV Rechnungswesen',fire:true},
+    {id:'p3',name:'Microsoft Excel'}, {id:'p4',name:'Debitorenbuchhaltung'},
+    {id:'p5',name:'Zahlungsverkehr'}, {id:'p6',name:'Monatsabschlüsse'},
+    {id:'p7',name:'Reisekostenabrechnung'}, {id:'p8',name:'Umsatzsteuervoranmeldung'},
+    {id:'p9',name:'Lohn- und Gehaltsabrechnung',fire:true}, {id:'p10',name:'Englisch B2'}
+  ];
+  const byId=new Map(profile.map(s=>[s.id,s]));
+  const same=(id,fire=false)=>({profile:id,name:byId.get(id).name,kind:'pass',fire});
+  const similar=(id,name,fire=false)=>({profile:id,name,kind:'close',fire});
+  const gap=(name,fire=false)=>({profile:null,name,kind:'gap',fire});
+  const jobs=[
+    {id:'bookkeeping',name:'Buchhaltung (m/w/d)',score:'0,74',skills:[
+      same('p1',true),same('p3'),same('p5'),same('p6'),
+      similar('p2','SAP Finanzwesen (FI)',true),similar('p4','Kreditorenbuchhaltung'),
+      similar('p7','Spesenabrechnung'),similar('p8','Umsatzsteuerrecht'),
+      gap('Jahresabschlusserstellung',true),gap('Kostenstellenrechnung')
+    ]},
+    {id:'receivables',name:'Debitorenbuchhaltung (m/w/d)',score:'0,72',skills:[
+      same('p1'),same('p3'),same('p4',true),same('p5'),same('p10'),
+      similar('p2','SAP Finanzwesen (FI)',true),similar('p6','Jahresabschlusserstellung'),similar('p8','Umsatzsteuerrecht'),
+      gap('Mahnwesen',true),gap('Forderungsmanagement')
+    ]},
+    {id:'controlling',name:'Controlling (m/w/d)',score:'0,38',skills:[
+      same('p3'),same('p10'),similar('p1','Kostenrechnung',true),similar('p2','SAP Controlling (CO)'),similar('p6','Management Reporting'),
+      gap('Budgetplanung',true),gap('Forecasting'),gap('Kennzahlenanalyse'),gap('Microsoft Power BI',true),gap('Investitionsrechnung')
+    ]}
+  ];
+  jobs.forEach(job=>job.skills.forEach((skill,i)=>skill.id=`${job.id}-${i}`));
+  const saved=window.openai?.widgetState?.privateContent||{};
+  const current=jobs[1];
+  let selected=null;
+  const showSimilar=true;
+  const paletteVersion='green-pair-v1';
+  const useSavedPalette=saved.paletteVersion===paletteVersion;
+  const colors={pass:useSavedPalette&&/^#[0-9a-f]{6}$/i.test(saved.pass)?saved.pass:'#c6e6d2',close:useSavedPalette&&/^#[0-9a-f]{6}$/i.test(saved.close)?saved.close:'#e8f5ed'};
+  function soften(name){return name.replace('Finanzbuchhaltung','Finanz\u00adbuchhaltung').replace('Debitorenbuchhaltung','Debitoren\u00adbuchhaltung')
+    .replace('Reisekostenabrechnung','Reisekosten\u00adabrechnung').replace('Umsatzsteuervoranmeldung','Umsatzsteuer\u00advoranmeldung')
+    .replace('Jahresabschlusserstellung','Jahresabschluss\u00aderstellung').replace('Forderungsmanagement','Forderungs\u00admanagement')
+    .replace('Gehaltsabrechnung','Gehalts\u00adabrechnung').replace('Rechnungswesen','Rechnungs\u00adwesen').replace('Personalabrechnung','Personal\u00adabrechnung');}
+  const meanings={pass:'Passt',close:'Ähnlich',gap:'Fehlt im Profil',extra:'Zusätzlich im Profil'};
+  function fireState(id){
+    const own=byId.get(id),match=own?current.skills.find(s=>s.profile===id):current.skills.find(s=>s.id===id);
+    return own?.fire?(match?.fire?'both':'own'):(match?.fire?'job':'none');
+  }
+  function fireDescription(id){
+    const state=fireState(id);
+    return state==='both'?'Beide Seiten als Fire Skill markiert':state==='own'?'Fire Skill nur bei dir: besondere Stärke':state==='job'?'Fire Skill nur im Job: besonders wichtig':'';
+  }
+  function fireMarker(id){
+    const state=fireState(id);if(state==='none')return null;
+    const badge=document.createElement('span');badge.className='jp-fire';badge.dataset.fire=state;
+    badge.setAttribute('aria-hidden','true');
+    const icon=document.createElement('i');icon.className='jp-flame';icon.dataset.lucide='flame';icon.setAttribute('aria-hidden','true');badge.append(icon);
+    return badge;
+  }
+  function makePill(id,name,kind){
+    const el=document.createElement(kind==='close'?'div':'button');
+    el.className=kind==='close'?'jp-pill':'jp-pill cursor-interaction';el.dataset.skill=id;
+    if(kind==='close')el.setAttribute('role','group');else el.type='button';
+    el.dataset.kind=kind;
+    const row=document.createElement('span');row.className='jp-own-row';
+    const label=document.createElement('span');label.className='jp-own-name';label.textContent=soften(name);row.append(label);
+    const marker=fireMarker(id);if(marker)row.append(marker);el.append(row);
+    el.dataset.fire=fireState(id);
+    if(marker)el.setAttribute('data-tooltip',fireDescription(id));
+    if(kind==='close'){
+      const match=current.skills.find(s=>s.profile===id);
+      const jobLabel=document.createElement('span');jobLabel.className='jp-job-inline';
+      jobLabel.id='jp-bar-debitoren-inline-'+id;jobLabel.textContent=soften(match.name);el.append(jobLabel);
+    } else el.setAttribute('aria-pressed','false');
+    return el;
+  }
+  function save(){window.openai?.setWidgetState?.({modelContent:{design:'Separate Job-Ansicht im Handyformat 201:437 mit Skill-Pillen und kompakter Match-Leiste; ähnliche Job-Skills dauerhaft sichtbar; Fire Skills ohne Du/Job-Beschriftung: gefüllt = beide, Kontur = einseitig',job:current.name,similarJobSkillsVisible:showSimilar,ownFireSkills:profile.filter(s=>s.fire).map(s=>s.name),jobFireSkills:current.skills.filter(s=>s.fire).map(s=>s.name)},privateContent:{paletteVersion,job:current.id,selected,showSimilar,pass:colors.pass,close:colors.close}})?.catch(()=>{});}
+  function applyColors(){app.style.setProperty('--jp-pass',colors.pass);app.style.setProperty('--jp-close',colors.close);}
+  function fitPairs(){
+    const pills=Array.from(cloud.querySelectorAll('.jp-pill[data-kind="close"]'));
+    pills.forEach(el=>{el.classList.remove('is-expanded');el.style.width='';el.querySelector('.jp-job-inline').hidden=true;});
+    const widths=pills.map(el=>el.getBoundingClientRect().width);
+    pills.forEach((el,i)=>{
+      const own=byId.get(el.dataset.skill),match=current.skills.find(s=>s.profile===own.id);
+      el.setAttribute('aria-label',`Mein Skill: ${own.name}. Ähnlicher Job-Skill: ${match.name}. `+fireDescription(own.id));
+      el.style.width=widths[i]+'px';el.classList.add('is-expanded');el.querySelector('.jp-job-inline').hidden=false;
+    });
+  }
+  function showDetail(){
+    root.querySelectorAll('button.jp-pill').forEach(el=>el.setAttribute('aria-pressed','false'));
+    detail.replaceChildren();detail.hidden=true;if(!selected)return;
+    const own=byId.get(selected),match=own?current.skills.find(s=>s.profile===own.id):current.skills.find(s=>s.id===selected);
+    if(!own&&!match){selected=null;return;}
+    const kind=match?.kind||'extra';
+    if(kind==='close'){selected=null;return;}
+    detail.hidden=false;
+    const title=document.createElement('div');title.className='jp-detail-title';title.textContent=meanings[kind];detail.append(title);
+    const line=document.createElement('div');line.className='jp-detail-line';
+    line.textContent=match?.kind==='pass'?`${match.name} · auf beiden Seiten angegeben`:match?`Im Job gesucht: ${match.name}`:`Im Job nicht gesucht: ${own.name}`;
+    detail.append(line);
+    if(fireDescription(selected)){const fireLine=document.createElement('div');fireLine.className='jp-detail-line';fireLine.textContent=fireDescription(selected);detail.append(fireLine);}
+    const pill=cloud.querySelector(`[data-skill="${selected}"]`);pill?.setAttribute('aria-pressed','true');
+  }
+  function render(announce=false){
+    applyColors();root.querySelector('.sm-title').textContent=current.name;root.querySelector('.sm-score').textContent=current.score;root.querySelector('.sm-score').setAttribute('aria-label','Beispielscore '+current.score+' von 1');
+    const correspondence=id=>current.skills.find(s=>s.profile===id);
+    const ownOrder=['p1','p3','p5','p6','p2','p4','p7','p8','p9','p10'];
+    const entries=[
+      ...ownOrder.map(id=>({...byId.get(id),kind:correspondence(id)?.kind||'extra'})),
+      ...current.skills.filter(s=>s.kind==='gap')
+    ];
+    cloud.replaceChildren();
+    const counts={pass:0,close:0,gap:0,extra:0};
+    entries.forEach(s=>{
+      const el=makePill(s.id,s.name,s.kind);
+      el.setAttribute('aria-label',s.kind==='close'?`Mein Skill: ${s.name}. Ähnlicher Job-Skill: ${correspondence(s.id).name}`:`${s.name}: ${meanings[s.kind]}`);
+      if(fireDescription(s.id))el.setAttribute('aria-label',el.getAttribute('aria-label')+'. '+fireDescription(s.id));
+      cloud.append(el);counts[s.kind]++;
+    });
+    for(const kind of ['pass','close','gap'])root.querySelector('[data-count="'+kind+'"]').textContent=String(counts[kind]);
+    const coverage=root.querySelector('.sm-coverage');coverage.replaceChildren();
+    for(const kind of ['pass','close','gap']){
+      for(let i=0;i<counts[kind];i++){const unit=document.createElement('span');unit.className='sm-unit';unit.dataset.status=kind;unit.setAttribute('aria-hidden','true');coverage.append(unit);}
+    }
+    coverage.setAttribute('aria-label','Zehn Job-Skills: '+counts.pass+' passen, '+counts.close+' ähnlich, '+counts.gap+' fehlen. Zusätzliche Profil-Skills werden nicht mitgezählt.');
+    if(globalThis.lucide)lucide.createIcons({attrs:{width:14,height:14}});
+    fitPairs();showDetail();
+    if(announce)root.querySelector('.jp-announcement').textContent=`${current.name}, Beispiel-Score ${current.score}. Die Reihenfolge deiner zehn Skills bleibt unverändert. Ähnliche Job-Bezeichnungen sind dauerhaft sichtbar.`;
+  }
+  root.addEventListener('click',event=>{
+    const pill=event.target.closest('button[data-skill]');if(pill){selected=selected===pill.dataset.skill?null:pill.dataset.skill;showDetail();save();}
+  });
+  window.addEventListener('openai:set_globals',event=>{
+    const value=event.detail?.globals?.widgetState?.privateContent;if(!value)return;
+    selected=value.selected||null;
+    if(value.paletteVersion===paletteVersion){if(/^#[0-9a-f]{6}$/i.test(value.pass))colors.pass=value.pass;if(/^#[0-9a-f]{6}$/i.test(value.close))colors.close=value.close;}
+    render();
+  });
+  selected=saved.selected||null;render();
+  let lastWidth=app.clientWidth;
+  new ResizeObserver(()=>{const width=app.clientWidth;if(Math.abs(width-lastWidth)>.5){lastWidth=width;fitPairs();}}).observe(app);
+  if(globalThis.Tweak){const tweak=new Tweak({container:app,onChange:()=>{applyColors();save();}});tweak.addColorPicker(colors,'pass',{label:'Passt',reference:'--jp-pass'});tweak.addColorPicker(colors,'close',{label:'Ähnlich',reference:'--jp-close'});}
+})();
+</script>
+
+
+
+
+
+
+
+</body></html>
+

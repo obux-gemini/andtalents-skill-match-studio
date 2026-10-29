@@ -1,0 +1,16 @@
+body .ip-shell.ra-application.ra-application{width:100%!important;max-width:none!important;zoom:1!important;margin:0;padding:0!important;border:1px solid #dce5e0;border-radius:14px!important;background:#fff!important;font-family:var(--studio-font);box-shadow:0 2px 8px #203e3010}
+body .ra-application .ip-screen{aspect-ratio:auto!important;height:auto!important;border-radius:13px!important;overflow:hidden!important;display:flex;flex-direction:column}
+body .ra-application .ip-status,body .ra-application .ip-home,body .ra-application .jp-brandbar,body .ra-application .os-brand{display:none!important}
+body .ra-application .ip-screen .jp-app,body .ra-application .ip-screen .os-app{flex:none!important;height:auto!important;overflow:visible!important}
+body .ra-application .ra-dock{position:static;box-shadow:none;padding:14px 16px;background:#fafcfb;border-top:1px solid #e3ebe7}
+body .ra-application .ra-dock .jm-feedback{position:static;margin:12px 0 0;box-shadow:none;pointer-events:auto}
+body .ra-job-context{margin:0;padding:14px 16px;background:#f5f8f7;border-bottom:1px solid #e3ebe7;font-family:var(--studio-font)}
+body .ra-job-context-label{font-size:11px;line-height:1.4;color:#61716b;margin-bottom:4px}
+body .ra-job-title{font-size:14px;line-height:1.4;font-weight:600;margin:0;overflow-wrap:break-word;hyphens:auto}
+body .ra-decisions{display:flex;gap:12px;justify-content:center}
+body .ra-decision{display:flex;align-items:center;justify-content:center;gap:8px;flex:1;min-width:0;min-height:46px;padding:10px 12px;border-radius:8px;font-size:14px;font-weight:600;line-height:1.25;cursor:pointer}
+body .ra-reject{border:1px solid #ff7c1b;background:#fff;color:#bd4c00}
+body .ra-accept{border:1px solid var(--studio-accent);background:var(--studio-accent);color:#fff}
+body .ra-decision svg{width:19px;height:19px;flex:none;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+body .ra-decision[aria-pressed=true]{outline:2px solid #243d37;outline-offset:3px}
+body .ra-decision:focus-visible{outline:3px solid #243d37;outline-offset:3px}

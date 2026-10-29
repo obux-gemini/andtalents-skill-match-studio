@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Kandidat · Liste · debitoren · &TALENTS</title><link rel="stylesheet" href="../view-bridge.css?v=industry-20261029-2"><script src="../icons.js?v=industry-20261029-2" defer></script><script src="../view-bridge.js?v=industry-20261029-2" defer></script></head><body>
+<style>
+  #skill-phone-debitoren { width:100%; padding:14px 8px; }
+  #skill-phone-debitoren .os-app { --os-paper:#ffffff; --os-ink:#19332f; --os-muted:#677773; --os-line:#e8eeeb; --os-teal:#008f85; --os-pass:#278568; --os-close:#9b6d27; --os-open:#a15e62; --os-fire:#b96312; width:100%; max-width:390px; margin:auto; color-scheme:light; background:var(--os-paper); color:var(--os-ink); border:1px solid var(--os-line); border-radius:14px; font-family:Arial,sans-serif; font-size:13px; line-height:1.35; overflow:hidden; }
+  #skill-phone-debitoren .os-app * { box-sizing:border-box; }
+  #skill-phone-debitoren .os-brand { height:42px; display:flex; align-items:center; justify-content:center; border-bottom:1px solid var(--os-line); color:var(--os-teal); font-size:19px; letter-spacing:-.7px; }
+  #skill-phone-debitoren .os-brand b { background:#f39a28; color:var(--os-paper); font-weight:500; padding:0 1px; }
+  #skill-phone-debitoren .os-main { padding:12px 14px 11px; }
+  #skill-phone-debitoren .os-jobbar { display:flex; align-items:center; justify-content:space-between; gap:12px; min-height:54px; }
+  #skill-phone-debitoren .os-jobbar > div:first-child { min-width:0; flex:1; }
+  #skill-phone-debitoren .os-job { margin:0; font-size:16px; line-height:1.3; font-weight:500; overflow-wrap:anywhere; hyphens:auto; }
+  #skill-phone-debitoren .os-meta { margin-top:4px; font-size:11px; color:var(--os-muted); }
+  #skill-phone-debitoren .os-score-wrap { flex:none; text-align:right; }
+  #skill-phone-debitoren .os-score { display:block; font-size:35px; line-height:1.05; font-weight:500; letter-spacing:-1px; font-variant-numeric:tabular-nums; color:var(--os-teal); }
+  #skill-phone-debitoren .os-score-label { font-size:11px; color:var(--os-muted); }
+  #skill-phone-debitoren .os-overview { margin-top:12px; padding-bottom:10px; }
+  #skill-phone-debitoren .os-coverage { display:grid; grid-template-columns:repeat(10,minmax(0,1fr)); gap:4px; margin-bottom:7px; }
+  #skill-phone-debitoren .os-unit { height:7px; border-radius:2px; background:var(--os-pass); }
+  #skill-phone-debitoren .os-unit[data-status="close"] { background:#d3b579; }
+  #skill-phone-debitoren .os-unit[data-status="open"] { background:#d8a4a7; }
+  #skill-phone-debitoren .os-counts { display:flex; align-items:center; justify-content:space-between; gap:8px; font-size:12px; color:var(--os-muted); }
+  #skill-phone-debitoren .os-counts strong { color:var(--os-ink); font-weight:500; }
+  #skill-phone-debitoren .os-list-heading { margin:0; padding:5px 0 4px; font-size:11px; color:var(--os-muted); font-weight:400; }
+  #skill-phone-debitoren .os-list { list-style:none; padding:0; margin:0; }
+  #skill-phone-debitoren .os-row { padding:5px 8px; border-bottom:1px solid var(--os-paper); }
+  #skill-phone-debitoren .os-row[data-status="pass"] { background:#dcefe7; }
+  #skill-phone-debitoren .os-row[data-status="close"] { background:#f4ead4; }
+  #skill-phone-debitoren .os-row[data-status="open"] { background:#f3e4e5; }
+  #skill-phone-debitoren .os-top { display:block; }
+  #skill-phone-debitoren .os-name { display:flex; align-items:center; gap:5px; min-width:0; font-size:13px; }
+  #skill-phone-debitoren .os-name-text { min-width:0; overflow-wrap:anywhere; }
+  #skill-phone-debitoren .os-fire { flex:none; display:inline-flex; color:var(--os-fire); }
+  #skill-phone-debitoren .os-fire svg { width:13px; height:13px; fill:none; stroke-width:2; }
+  #skill-phone-debitoren .os-fire[data-fire="both"] svg { fill:currentColor; }
+  #skill-phone-debitoren .os-accessible-status { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip-path:inset(50%); }
+  #skill-phone-debitoren .os-profile { margin-top:2px; font-size:12px; color:#52635c; overflow-wrap:anywhere; }
+  #skill-phone-debitoren .os-open-note { margin:7px 0 10px; font-size:11px; color:var(--os-muted); }
+  #skill-phone-debitoren .os-extra-heading { margin:0 0 4px; font-size:11px; font-weight:400; color:var(--os-muted); }
+  #skill-phone-debitoren .os-extras { display:flex; flex-wrap:wrap; gap:4px 14px; list-style:none; margin:0; padding:0; }
+  #skill-phone-debitoren .os-extras .os-name { font-size:12px; }
+  @media(max-width:400px) { #skill-phone-debitoren { padding:10px 0; } #skill-phone-debitoren .os-main { padding-inline:12px; } }
+
+  #skill-phone-debitoren .ip-shell { width:100%; max-width:414px; margin:auto; padding:6px; background:#1c1e20; border-radius:48px; box-sizing:border-box; }
+  #skill-phone-debitoren .ip-shell * { box-sizing:border-box; }
+  #skill-phone-debitoren .ip-screen { width:100%; aspect-ratio:201 / 437; display:flex; flex-direction:column; container-type:inline-size; background:#ffffff; color:#141716; border-radius:42px; overflow:hidden; }
+  #skill-phone-debitoren .ip-status { height:52px; flex:none; padding:10px 19px 5px; display:flex; align-items:center; justify-content:space-between; gap:9px; color:#141716; font-family:Arial,sans-serif; font-size:13px; line-height:1; }
+  #skill-phone-debitoren .ip-clock { width:42px; text-align:center; font-weight:500; }
+  #skill-phone-debitoren .ip-island { width:112px; height:28px; flex:none; border-radius:999px; background:#101214; }
+  #skill-phone-debitoren .ip-indicators { display:flex; align-items:center; gap:4px; width:59px; }
+  #skill-phone-debitoren .ip-indicators svg { width:16px; height:16px; flex:none; }
+  #skill-phone-debitoren .ip-screen .os-app { width:100%; max-width:none; margin:0; min-height:0; flex:1; border:0; border-radius:0; overflow:visible; }
+  #skill-phone-debitoren .ip-screen .os-main { padding:12px 14px 11px; }
+  #skill-phone-debitoren .ip-home { height:26px; flex:none; display:flex; align-items:center; justify-content:center; background:#ffffff; }
+  #skill-phone-debitoren .ip-home span { width:110px; height:4px; border-radius:999px; background:#141716; }
+  @container (max-width:370px) {
+    #skill-phone-debitoren .ip-screen .os-brand { height:35px; }
+    #skill-phone-debitoren .ip-screen .os-main { padding:8px 11px; }
+    #skill-phone-debitoren .ip-screen .os-jobbar { min-height:48px; }
+    #skill-phone-debitoren .ip-screen .os-job { font-size:15px; }
+    #skill-phone-debitoren .ip-screen .os-score { font-size:32px; }
+    #skill-phone-debitoren .ip-screen .os-overview { margin-top:9px; padding-bottom:7px; }
+    #skill-phone-debitoren .ip-screen .os-row { padding:4px 7px; }
+    #skill-phone-debitoren .ip-screen .os-open-note { margin:5px 0 7px; }
+  }
+  @container (max-width:320px) {
+    #skill-phone-debitoren .ip-status { height:44px; padding:8px 15px 4px; }
+    #skill-phone-debitoren .ip-island { width:94px; height:24px; }
+    #skill-phone-debitoren .ip-screen .os-brand { height:31px; font-size:18px; }
+    #skill-phone-debitoren .ip-screen .os-main { padding:6px 9px; }
+    #skill-phone-debitoren .ip-screen .os-jobbar { min-height:43px; gap:8px; }
+    #skill-phone-debitoren .ip-screen .os-job { font-size:14px; }
+    #skill-phone-debitoren .ip-screen .os-meta { margin-top:2px; }
+    #skill-phone-debitoren .ip-screen .os-score { font-size:29px; }
+    #skill-phone-debitoren .ip-screen .os-overview { margin-top:7px; padding-bottom:4px; }
+    #skill-phone-debitoren .ip-screen .os-coverage { margin-bottom:5px; }
+    #skill-phone-debitoren .ip-screen .os-list-heading { padding:3px 0; }
+    #skill-phone-debitoren .ip-screen .os-row { padding:2px 6px; }
+    #skill-phone-debitoren .ip-screen .os-name { font-size:12px; line-height:1.25; }
+    #skill-phone-debitoren .ip-screen .os-profile { font-size:11px; line-height:1.25; margin-top:1px; }
+    #skill-phone-debitoren .ip-screen .os-open-note { margin:4px 0 5px; }
+    #skill-phone-debitoren .ip-screen .os-extras { gap:3px 10px; }
+    #skill-phone-debitoren .ip-screen .os-extras .os-name { font-size:11px; line-height:1.25; }
+    #skill-phone-debitoren .ip-home { height:22px; }
+  }
+  @container (max-width:290px) {
+    #skill-phone-debitoren .ip-screen .os-row { padding:1px 6px; }
+  }
+</style>
+<div id="skill-phone-debitoren" class="viz-dotted-background">
+  <div class="ip-shell" aria-label="Handyrahmen mit Display-Seitenverhältnis 201 zu 437">
+    <div class="ip-screen">
+      <div class="ip-status" aria-hidden="true"><span class="ip-clock">9:41</span><span class="ip-island"></span><span class="ip-indicators"><i data-lucide="signal"></i><i data-lucide="wifi"></i><i data-lucide="battery-full"></i></span></div>
+  <section class="os-app" lang="de" aria-label="Vollständiger Skill-Abgleich ohne Interaktion">
+    <header class="os-brand"><span><b>&amp;</b>TALENTS</span></header>
+    <main class="os-main">
+      <div class="os-jobbar">
+        <div><h2 class="os-job">Debitoren&shy;buchhaltung (m/w/d)</h2><div class="os-meta">Hamburg</div></div>
+        <div class="os-score-wrap"><span class="os-score" aria-label="Beispielscore 0,72 von 1">0,72</span><span class="os-score-label">Match-Score</span></div>
+      </div>
+      <section class="os-overview" aria-label="Gesamtergebnis">
+        <div class="os-coverage" role="img" aria-label="Zehn Job-Anforderungen: 5 passen genau, 3 haben eine ähnliche Entsprechung, 2 sind im Profil nicht angegeben"></div>
+        <div class="os-counts"><span><strong>5</strong> passen</span><span><strong>3</strong> ähnlich</span><span><strong>2</strong> fehlen</span></div>
+      </section>
+      <section aria-labelledby="os-phone-debitoren-job-skills-title">
+        <h3 id="os-phone-debitoren-job-skills-title" class="os-list-heading">Job-Skills</h3>
+        <ul class="os-list"></ul>
+      </section>
+      <section class="os-extra-section" aria-labelledby="os-phone-debitoren-extra-title">
+        <h3 id="os-phone-debitoren-extra-title" class="os-extra-heading">Zusätzlich im Profil</h3>
+        <ul class="os-extras"></ul>
+      </section>
+    </main>
+  </section>
+      <div class="ip-home" aria-hidden="true"><span></span></div>
+    </div>
+  </div>
+</div>
+<script>
+(()=>{
+  const root=document.getElementById('skill-phone-debitoren');
+  const requirements=[
+  {
+    "name": "Finanzbuchhaltung",
+    "status": "pass",
+    "important": false,
+    "profile": "Finanzbuchhaltung",
+    "strength": true
+  },
+  {
+    "name": "Microsoft Excel",
+    "status": "pass",
+    "important": false,
+    "profile": "Microsoft Excel",
+    "strength": false
+  },
+  {
+    "name": "Debitorenbuchhaltung",
+    "status": "pass",
+    "important": true,
+    "profile": "Debitorenbuchhaltung",
+    "strength": false
+  },
+  {
+    "name": "Zahlungsverkehr",
+    "status": "pass",
+    "important": false,
+    "profile": "Zahlungsverkehr",
+    "strength": false
+  },
+  {
+    "name": "Englisch B2",
+    "status": "pass",
+    "important": false,
+    "profile": "Englisch B2",
+    "strength": false
+  },
+  {
+    "name": "SAP S/4HANA Finance – Debitorenbuchhaltung",
+    "status": "close",
+    "important": true,
+    "profile": "DATEV Rechnungswesen",
+    "strength": true
+  },
+  {
+    "name": "Monats- und Jahresabschlusserstellung",
+    "status": "close",
+    "important": false,
+    "profile": "Monatsabschlüsse",
+    "strength": false
+  },
+  {
+    "name": "Umsatzsteuerliche Behandlung grenzüberschreitender Leistungen",
+    "status": "close",
+    "important": false,
+    "profile": "Umsatzsteuervoranmeldung",
+    "strength": false
+  },
+  {
+    "name": "Mahnwesen und außergerichtliches Forderungsmanagement",
+    "status": "open",
+    "important": true
+  },
+  {
+    "name": "Abstimmung und Klärung offener Kundenposten",
+    "status": "open",
+    "important": false
+  }
+];
+  const extras=[{"name":"Reisekostenabrechnung","strength":false},{"name":"Lohn- und Gehaltsabrechnung","strength":true}];
+  const labels={pass:'Passt',close:'Ähnlich',open:'Fehlt im Profil'};
+  function icon(name){const el=document.createElement('i');el.dataset.lucide=name;el.setAttribute('aria-hidden','true');return el;}
+  function soften(name){return name.replace('Jahresabschlusserstellung','Jahresabschluss\u00aderstellung').replace('Kreditorenbuchhaltung','Kreditoren\u00adbuchhaltung').replace('Umsatzsteuervoranmeldung','Umsatzsteuer\u00advoranmeldung').replace('Gehaltsabrechnung','Gehalts\u00adabrechnung').replace('Monatsabschlusserstellung','Monatsabschluss\u00aderstellung').replace('Forderungsmanagement','Forderungs\u00admanagement').replace('Investitionsrechnungen','Investitions\u00adrechnungen').replace('Profitcenterrechnung','Profitcenter\u00adrechnung');}
+  function nameLabel(skill){
+    const name=document.createElement('span');name.className='os-name';
+    const text=document.createElement('span');text.className='os-name-text';text.textContent=soften(skill.name);name.append(text);
+    if(skill.important||skill.strength){
+      const fire=document.createElement('span');fire.className='os-fire';fire.dataset.fire=skill.important&&skill.strength?'both':skill.important?'job':'own';
+      fire.setAttribute('role','img');fire.setAttribute('aria-label',skill.important&&skill.strength?'Fire Skill auf beiden Seiten':skill.important?'Für den Job besonders wichtig':'Besondere Stärke im Profil');fire.append(icon('flame'));name.append(fire);
+    }
+    return name;
+  }
+  const list=root.querySelector('.os-list'),coverage=root.querySelector('.os-coverage');
+  requirements.forEach(skill=>{
+    const row=document.createElement('li');row.className='os-row';row.dataset.status=skill.status;
+    const top=document.createElement('div');top.className='os-top';top.append(nameLabel(skill));
+    const status=document.createElement('span');status.className='os-accessible-status';status.textContent=labels[skill.status]+': ';row.append(status,top);
+    if(skill.status==='close'){const profile=document.createElement('div');profile.className='os-profile';profile.textContent='Profil: '+soften(skill.profile);row.append(profile);}
+    list.append(row);
+    const unit=document.createElement('span');unit.className='os-unit';unit.dataset.status=skill.status;unit.setAttribute('aria-hidden','true');coverage.append(unit);
+  });
+  const additional=root.querySelector('.os-extras');
+  extras.forEach(skill=>{const item=document.createElement('li');item.append(nameLabel(skill));additional.append(item);});
+  if(globalThis.lucide)lucide.createIcons({attrs:{width:13,height:13}});
+})();
+</script>
+
+
+</body></html>
+

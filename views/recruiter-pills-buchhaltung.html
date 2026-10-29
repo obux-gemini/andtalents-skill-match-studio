@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Recruiter · Pillen · buchhaltung · &TALENTS</title><link rel="stylesheet" href="../view-bridge.css?v=industry-20261029-2"><script src="../icons.js?v=industry-20261029-2" defer></script><script src="../view-bridge.js?v=industry-20261029-2" defer></script><link rel="stylesheet" href="../recruiter-applications.css?v=rect-buttons-20261029-6"><script src="../recruiter-applications.js?v=applications-20261029-4" defer></script></head><body>
+<style>
+  #recruiter-pills-buchhaltung { width:100%; padding:20px 8px; }
+  #recruiter-pills-buchhaltung .jp-app {
+    --jp-paper:#ffffff; --jp-ink:#17202a; --jp-muted:#69727b; --jp-border:#e5e8e9;
+    --jp-teal:#009e92; --jp-brand:#008f87; --jp-orange:#f39a28; --jp-soft:#f1f4f4;
+    --jp-pass:#c6e6d2; --jp-close:#e8f5ed; --jp-gap:#f3e4e5; --jp-extra:#e9edf1; --jp-focus:#1c5855; --jp-fire:#b96312;
+    width:100%; max-width:390px; margin:auto; background:var(--jp-paper); color:var(--jp-ink);
+    border:1px solid var(--jp-border); border-radius:12px; overflow:hidden;
+    font-family:Arial,sans-serif; font-size:14px; line-height:1.35; color-scheme:light;
+  }
+  #recruiter-pills-buchhaltung .jp-app * { box-sizing:border-box; }
+  #recruiter-pills-buchhaltung button { font-family:inherit; line-height:inherit; }
+  #recruiter-pills-buchhaltung button:focus-visible { outline:2px solid var(--jp-focus); outline-offset:2px; }
+  #recruiter-pills-buchhaltung .jp-brandbar { height:49px; display:flex; align-items:center; justify-content:center; border-bottom:1px solid var(--jp-border); }
+  #recruiter-pills-buchhaltung .jp-logo { color:var(--jp-brand); font-size:19px; letter-spacing:-.7px; }
+  #recruiter-pills-buchhaltung .jp-logo b { color:var(--jp-paper); background:var(--jp-orange); font-weight:500; padding:0 1px; }
+  #recruiter-pills-buchhaltung .jp-picker { display:flex; gap:5px; padding:10px 12px 0; }
+  #recruiter-pills-buchhaltung .jp-job-button { flex:1; min-width:0; border:0; border-radius:999px; padding:8px 6px; min-height:36px; font-size:12px; background:var(--jp-soft); color:var(--jp-ink); }
+  #recruiter-pills-buchhaltung .jp-job-button[aria-pressed="true"] { background:var(--jp-teal); color:var(--jp-paper); }
+  #recruiter-pills-buchhaltung .jp-main { padding:13px 12px 14px; }
+  #recruiter-pills-buchhaltung .jp-jobbar { display:flex; align-items:center; justify-content:space-between; gap:10px; min-height:69px; margin-bottom:13px; }
+  #recruiter-pills-buchhaltung .jp-title { font-size:15px; font-weight:500; min-height:40px; display:flex; align-items:center; }
+  #recruiter-pills-buchhaltung .jp-company { color:var(--jp-muted); font-size:11px; }
+  #recruiter-pills-buchhaltung .jp-score { flex:none; min-width:82px; padding:7px 12px; border-radius:999px; background:var(--jp-teal); color:var(--jp-paper); text-align:center; }
+  #recruiter-pills-buchhaltung .jp-score strong { font-size:23px; font-weight:500; display:block; font-variant-numeric:tabular-nums; }
+  #recruiter-pills-buchhaltung .jp-score small { font-size:11px; display:block; }
+  #recruiter-pills-buchhaltung .jp-legend { display:grid; grid-template-columns:1fr 1fr; gap:10px 12px; padding:0; margin-bottom:10px; font-size:14px; }
+  #recruiter-pills-buchhaltung .jp-legend > span { display:flex; gap:8px; align-items:center; min-width:0; }
+  #recruiter-pills-buchhaltung .jp-swatch { display:flex; align-items:center; justify-content:center; width:28px; height:28px; flex:none; border-radius:7px; font-size:15px; font-weight:500; font-variant-numeric:tabular-nums; }
+  #recruiter-pills-buchhaltung [data-kind="pass"] { background:var(--jp-pass); }
+  #recruiter-pills-buchhaltung [data-kind="close"] { background:var(--jp-close); }
+  #recruiter-pills-buchhaltung [data-kind="gap"] { background:var(--jp-gap); }
+  #recruiter-pills-buchhaltung [data-kind="extra"] { background:var(--jp-extra); }
+  #recruiter-pills-buchhaltung .jp-toggle { display:block; max-width:100%; margin:0 0 12px; min-height:36px; padding:8px 11px; border:1px solid var(--jp-border); border-radius:8px; background:var(--jp-paper); color:var(--jp-brand); font-size:12px; text-align:left; }
+  #recruiter-pills-buchhaltung .jp-fire { display:inline-flex; align-items:center; gap:3px; flex:none; white-space:nowrap; color:var(--jp-fire); font-size:11px; }
+  #recruiter-pills-buchhaltung .jp-flame { display:block; width:14px; height:14px; flex:none; stroke:currentColor; stroke-width:2; fill:none; }
+  #recruiter-pills-buchhaltung .jp-fire[data-fire="both"] .jp-flame { fill:currentColor; }
+  #recruiter-pills-buchhaltung .jp-own-row { display:inline-flex; align-items:center; gap:5px; max-width:100%; min-width:0; }
+  #recruiter-pills-buchhaltung .jp-cloud { display:flex; flex-wrap:wrap; gap:8px 6px; align-content:flex-start; align-items:flex-start; }
+  #recruiter-pills-buchhaltung .jp-pill { display:inline-flex; align-items:center; min-height:34px; max-width:100%; padding:7px 10px; border:1px solid transparent; border-radius:999px; font-size:12px; text-align:left; color:var(--jp-ink); overflow-wrap:anywhere; }
+  #recruiter-pills-buchhaltung .jp-pill[aria-pressed="true"] { border-color:var(--jp-focus); box-shadow:0 0 0 1px var(--jp-focus); }
+  #recruiter-pills-buchhaltung .jp-own-name { min-width:0; max-width:100%; }
+  #recruiter-pills-buchhaltung .jp-pill.is-expanded { flex-direction:column; align-items:flex-start; gap:6px; border-radius:15px; }
+  #recruiter-pills-buchhaltung .jp-job-inline { display:block; max-width:100%; font-size:11px; color:#53665a; }
+  #recruiter-pills-buchhaltung .jp-job-inline[hidden] { display:none; }
+  #recruiter-pills-buchhaltung .jp-detail { margin-top:12px; padding:10px; border:1px solid var(--jp-border); border-radius:8px; font-size:12px; }
+  #recruiter-pills-buchhaltung .jp-detail[hidden] { display:none; }
+  #recruiter-pills-buchhaltung .jp-detail-title { font-size:11px; color:var(--jp-muted); margin-bottom:5px; }
+  #recruiter-pills-buchhaltung .jp-detail-line + .jp-detail-line { margin-top:4px; }
+  #recruiter-pills-buchhaltung .jp-sr-only { position:absolute; width:1px; height:1px; margin:-1px; padding:0; border:0; overflow:hidden; clip-path:inset(50%); }
+  @media (max-width:400px) {
+    #recruiter-pills-buchhaltung { padding:12px 0; }
+    #recruiter-pills-buchhaltung .jp-main { padding-inline:10px; }
+  }
+  @media (pointer:coarse) { #recruiter-pills-buchhaltung .jp-job-button, #recruiter-pills-buchhaltung .jp-pill, #recruiter-pills-buchhaltung .jp-toggle { min-height:44px; } }
+
+  #recruiter-pills-buchhaltung { padding:14px 8px; }
+  #recruiter-pills-buchhaltung .ip-shell { width:100%; max-width:414px; margin:auto; padding:6px; box-sizing:border-box; border-radius:48px; background:#1c1e20; }
+  #recruiter-pills-buchhaltung .ip-shell * { box-sizing:border-box; }
+  #recruiter-pills-buchhaltung .ip-screen { width:100%; aspect-ratio:201 / 437; display:flex; flex-direction:column; container-type:inline-size; background:#fff; color:#141716; border-radius:42px; overflow:hidden; }
+  #recruiter-pills-buchhaltung .ip-status { height:52px; flex:none; padding:10px 19px 5px; display:flex; align-items:center; justify-content:space-between; gap:9px; font:13px/1 Arial,sans-serif; }
+  #recruiter-pills-buchhaltung .ip-clock { width:42px; text-align:center; font-weight:500; }
+  #recruiter-pills-buchhaltung .ip-island { width:112px; height:28px; flex:none; border-radius:999px; background:#101214; }
+  #recruiter-pills-buchhaltung .ip-indicators { display:flex; align-items:center; gap:4px; width:59px; }
+  #recruiter-pills-buchhaltung .ip-indicators svg { width:16px; height:16px; flex:none; }
+  #recruiter-pills-buchhaltung .ip-screen .jp-app { width:100%; max-width:none; margin:0; min-height:0; flex:1; border:0; border-radius:0; overflow:visible; }
+  #recruiter-pills-buchhaltung .jp-jobbar > div:first-child { min-width:0; flex:1; }
+  #recruiter-pills-buchhaltung .jp-title { overflow-wrap:anywhere; hyphens:auto; }
+  #recruiter-pills-buchhaltung .ip-home { height:26px; flex:none; display:flex; align-items:center; justify-content:center; background:#fff; }
+  #recruiter-pills-buchhaltung .ip-home span { width:110px; height:4px; border-radius:999px; background:#141716; }
+  @media (max-width:400px) { #recruiter-pills-buchhaltung { padding:10px 0; } }
+  @container (max-width:370px) {
+    #recruiter-pills-buchhaltung .jp-brandbar { height:36px; }
+    #recruiter-pills-buchhaltung .jp-picker { padding:7px 10px 0; gap:4px; }
+    #recruiter-pills-buchhaltung .jp-main { padding:8px 10px 10px; }
+    #recruiter-pills-buchhaltung .jp-jobbar { min-height:56px; margin-bottom:9px; }
+    #recruiter-pills-buchhaltung .jp-title { min-height:32px; font-size:14px; }
+    #recruiter-pills-buchhaltung .jp-legend { font-size:12px; gap:7px 8px; margin-bottom:8px; }
+    #recruiter-pills-buchhaltung .jp-legend > span { gap:6px; }
+    #recruiter-pills-buchhaltung .jp-swatch { width:26px; height:26px; }
+    #recruiter-pills-buchhaltung .jp-toggle { margin-bottom:9px; padding:6px 9px; }
+    #recruiter-pills-buchhaltung .jp-cloud { gap:6px 5px; }
+    #recruiter-pills-buchhaltung .jp-pill { padding:5px 8px; min-height:30px; }
+  }
+  @container (max-width:320px) {
+    #recruiter-pills-buchhaltung .ip-status { height:44px; padding:8px 15px 4px; }
+    #recruiter-pills-buchhaltung .ip-island { width:94px; height:24px; }
+    #recruiter-pills-buchhaltung .ip-home { height:22px; }
+    #recruiter-pills-buchhaltung .jp-brandbar { height:31px; }
+    #recruiter-pills-buchhaltung .jp-logo { font-size:18px; }
+    #recruiter-pills-buchhaltung .jp-picker { padding:5px 8px 0; gap:3px; }
+    #recruiter-pills-buchhaltung .jp-job-button { padding:5px 3px; min-height:30px; font-size:11px; }
+    #recruiter-pills-buchhaltung .jp-main { padding:6px 8px 8px; }
+    #recruiter-pills-buchhaltung .jp-jobbar { min-height:48px; gap:6px; margin-bottom:7px; }
+    #recruiter-pills-buchhaltung .jp-title { font-size:13px; min-height:27px; }
+    #recruiter-pills-buchhaltung .jp-score { min-width:70px; padding:5px 9px; }
+    #recruiter-pills-buchhaltung .jp-score strong { font-size:21px; }
+    #recruiter-pills-buchhaltung .jp-legend { font-size:11px; gap:5px 6px; margin-bottom:6px; }
+    #recruiter-pills-buchhaltung .jp-legend > span { gap:4px; }
+    #recruiter-pills-buchhaltung .jp-swatch { width:23px; height:23px; border-radius:6px; font-size:13px; }
+    #recruiter-pills-buchhaltung .jp-toggle { min-height:30px; font-size:11px; padding:5px 7px; margin-bottom:7px; }
+    #recruiter-pills-buchhaltung .jp-cloud { gap:5px 4px; }
+    #recruiter-pills-buchhaltung .jp-pill { min-height:27px; padding:4px 7px; font-size:11px; }
+    #recruiter-pills-buchhaltung .jp-pill.is-expanded { gap:3px; border-radius:12px; }
+    #recruiter-pills-buchhaltung .jp-own-row { gap:4px; }
+    #recruiter-pills-buchhaltung .jp-flame { width:12px; height:12px; }
+  }
+  @container (max-width:290px) {
+    #recruiter-pills-buchhaltung .jp-brandbar { height:28px; }
+    #recruiter-pills-buchhaltung .jp-picker { padding-top:3px; }
+    #recruiter-pills-buchhaltung .jp-main { padding-top:4px; }
+    #recruiter-pills-buchhaltung .jp-jobbar { margin-bottom:5px; }
+    #recruiter-pills-buchhaltung .jp-legend { gap:4px 5px; margin-bottom:5px; }
+    #recruiter-pills-buchhaltung .jp-toggle { margin-bottom:5px; }
+    #recruiter-pills-buchhaltung .jp-cloud { gap:4px 3px; }
+    #recruiter-pills-buchhaltung .jp-pill { min-height:21px; padding:2px 6px; }
+    #recruiter-pills-buchhaltung .jp-pill.is-expanded { gap:2px; }
+  }
+
+  #recruiter-pills-buchhaltung .jp-app { --jp-ink:#19332f; --jp-muted:#677773; --jp-teal:#008f85; --jp-brand:#008f85; }
+  #recruiter-pills-buchhaltung .jp-brandbar { height:42px; }
+  #recruiter-pills-buchhaltung .jp-main { padding:12px 14px 11px; }
+  #recruiter-pills-buchhaltung .sm-jobbar { display:flex; align-items:center; justify-content:space-between; gap:12px; min-height:54px; }
+  #recruiter-pills-buchhaltung .sm-jobbar > div:first-child { min-width:0; flex:1; }
+  #recruiter-pills-buchhaltung .sm-title { margin:0; font-size:16px; line-height:1.3; font-weight:500; overflow-wrap:anywhere; hyphens:auto; }
+  #recruiter-pills-buchhaltung .sm-meta { margin-top:4px; font-size:11px; color:var(--jp-muted); }
+  #recruiter-pills-buchhaltung .sm-score-wrap { flex:none; text-align:right; }
+  #recruiter-pills-buchhaltung .sm-score { display:block; font-size:35px; line-height:1.05; font-weight:500; letter-spacing:-1px; font-variant-numeric:tabular-nums; color:var(--jp-teal); }
+  #recruiter-pills-buchhaltung .sm-score-label { font-size:11px; color:var(--jp-muted); }
+  #recruiter-pills-buchhaltung .sm-overview { margin-top:12px; padding-bottom:14px; }
+  #recruiter-pills-buchhaltung .sm-coverage { display:grid; grid-template-columns:repeat(10,minmax(0,1fr)); gap:4px; margin-bottom:7px; }
+  #recruiter-pills-buchhaltung .sm-unit { height:7px; border-radius:2px; background:var(--jp-pass); }
+  #recruiter-pills-buchhaltung .sm-unit[data-status="close"] { background:var(--jp-close); }
+  #recruiter-pills-buchhaltung .sm-unit[data-status="gap"] { background:#d8a4a7; }
+  #recruiter-pills-buchhaltung .sm-counts { display:flex; align-items:center; justify-content:space-between; gap:8px; font-size:12px; color:var(--jp-muted); }
+  #recruiter-pills-buchhaltung .sm-counts strong { color:var(--jp-ink); font-weight:500; font-variant-numeric:tabular-nums; }
+  @container (max-width:370px) {
+    #recruiter-pills-buchhaltung .jp-brandbar { height:35px; }
+    #recruiter-pills-buchhaltung .jp-main { padding:8px 11px; }
+    #recruiter-pills-buchhaltung .sm-jobbar { min-height:48px; }
+    #recruiter-pills-buchhaltung .sm-title { font-size:15px; }
+    #recruiter-pills-buchhaltung .sm-score { font-size:32px; }
+    #recruiter-pills-buchhaltung .sm-overview { margin-top:9px; padding-bottom:11px; }
+  }
+  @container (max-width:320px) {
+    #recruiter-pills-buchhaltung .jp-brandbar { height:31px; }
+    #recruiter-pills-buchhaltung .jp-main { padding:6px 9px; }
+    #recruiter-pills-buchhaltung .sm-jobbar { min-height:43px; gap:8px; }
+    #recruiter-pills-buchhaltung .sm-title { font-size:14px; }
+    #recruiter-pills-buchhaltung .sm-meta { margin-top:2px; }
+    #recruiter-pills-buchhaltung .sm-score { font-size:29px; }
+    #recruiter-pills-buchhaltung .sm-overview { margin-top:7px; padding-bottom:8px; }
+    #recruiter-pills-buchhaltung .sm-coverage { margin-bottom:5px; }
+    #recruiter-pills-buchhaltung .sm-counts { font-size:11px; }
+  }
+  @container (max-width:290px) {
+    #recruiter-pills-buchhaltung .jp-detail { padding:5px 6px; margin-top:6px; font-size:11px; line-height:1.25; }
+    #recruiter-pills-buchhaltung .jp-detail-title { margin-bottom:3px; }
+    #recruiter-pills-buchhaltung .jp-detail-line + .jp-detail-line { margin-top:2px; }
+    #recruiter-pills-buchhaltung .jp-main:has(.jp-detail:not([hidden])) .jp-cloud { gap:2px 3px; }
+    #recruiter-pills-buchhaltung .jp-main:has(.jp-detail:not([hidden])) .jp-pill { padding-block:1px; min-height:19px; }
+  }
+
+  #recruiter-pills-buchhaltung .rc-skills-head { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:4px 8px; margin-bottom:7px; }
+  #recruiter-pills-buchhaltung .rc-heading { margin:0; font-size:11px; font-weight:400; color:var(--jp-muted); }
+  #recruiter-pills-buchhaltung .rc-priority { font-size:11px; color:var(--jp-ink); }
+  #recruiter-pills-buchhaltung .rc-priority[hidden],#recruiter-pills-buchhaltung .rc-extra-section[hidden],#recruiter-pills-buchhaltung .sm-counts > span[hidden] { display:none; }
+  #recruiter-pills-buchhaltung .rc-note { font-size:11px; color:var(--jp-muted); margin:8px 0 12px; }
+  #recruiter-pills-buchhaltung .rc-extra-section .rc-heading { margin-bottom:6px; }
+  #recruiter-pills-buchhaltung .jp-job-inline { display:flex; align-items:center; gap:5px; }
+  #recruiter-pills-buchhaltung .rc-extras { gap:6px; }
+  @container(max-width:320px) {
+    #recruiter-pills-buchhaltung .rc-skills-head { margin-bottom:5px; }
+    #recruiter-pills-buchhaltung .rc-note { margin:5px 0 8px; }
+    #recruiter-pills-buchhaltung .rc-extras { gap:4px; }
+  }
+  @container(max-width:290px) {
+    #recruiter-pills-buchhaltung .jp-cloud { row-gap:3px; }
+    #recruiter-pills-buchhaltung .rc-note { margin:4px 0 6px; }
+    #recruiter-pills-buchhaltung .rc-extra-section .rc-heading { margin-bottom:4px; }
+  }
+</style>
+<div id="recruiter-pills-buchhaltung" class="viz-dotted-background">
+  <div class="ip-shell" aria-label="Handyrahmen mit Display-Seitenverhältnis 201 zu 437">
+    <div class="ip-screen">
+      <div class="ip-status" aria-hidden="true"><span class="ip-clock">9:41</span><span class="ip-island"></span><span class="ip-indicators"><i data-lucide="signal"></i><i data-lucide="wifi"></i><i data-lucide="battery-full"></i></span></div>
+  <section class="jp-app" lang="de" aria-label="Recruiter-Ansicht: Kandidatenprofil mit Job-Skills abgleichen">
+    <header class="jp-brandbar"><span class="jp-logo"><b>&amp;</b>TALENTS</span></header>
+    <div class="jp-main">
+      <div class="sm-jobbar">
+        <div><h2 class="sm-title">Alex M.</h2><div class="sm-meta"></div></div>
+        <div class="sm-score-wrap"><span class="sm-score"></span><span class="sm-score-label">Match-Score</span></div>
+      </div>
+      <section class="sm-overview" aria-label="Abgleich der zehn Job-Skills">
+        <div class="sm-coverage" role="img"></div>
+        <div class="sm-counts"><span><strong data-count="pass">0</strong> passen</span><span><strong data-count="close">0</strong> ähnlich</span><span><strong data-count="gap">0</strong> fehlen</span></div>
+      </section>
+      <div class="rc-skills-head"><h3 class="rc-heading">Job-Skills</h3><span class="rc-priority"></span></div>
+      <div class="jp-cloud jp-unified" aria-label="Job-Skills in fester Reihenfolge mit zugeordneten Kandidaten-Skills"></div>
+      <section class="rc-extra-section" aria-label="Weitere Kandidaten Skills">
+        <h3 class="rc-heading">Weitere Kandidaten Skills</h3>
+        <div class="jp-cloud rc-extras"></div>
+      </section>
+    </div>
+  </section>
+      <div class="ip-home" aria-hidden="true"><span></span></div>
+    </div>
+  </div>
+</div>
+
+<script>
+(() => {
+  const root=document.getElementById('recruiter-pills-buchhaltung');
+  const app=root.querySelector('.jp-app'),cloud=root.querySelector('.jp-unified'),extraCloud=root.querySelector('.rc-extras');
+  const profile=[
+    {id:'p1',name:'Finanzbuchhaltung',fire:true}, {id:'p2',name:'DATEV Rechnungswesen',fire:true},
+    {id:'p3',name:'Microsoft Excel'}, {id:'p4',name:'Debitorenbuchhaltung'},
+    {id:'p5',name:'Zahlungsverkehr'}, {id:'p6',name:'Monatsabschlüsse'},
+    {id:'p7',name:'Reisekostenabrechnung'}, {id:'p8',name:'Umsatzsteuervoranmeldung'},
+    {id:'p9',name:'Lohn- und Gehaltsabrechnung',fire:true}, {id:'p10',name:'Englisch B2'}
+  ];
+  const byId=new Map(profile.map(s=>[s.id,s]));
+  const same=(id,fire=false)=>({profile:id,name:byId.get(id).name,kind:'pass',fire});
+  const similar=(id,name,fire=false)=>({profile:id,name,kind:'close',fire});
+  const gap=(name,fire=false)=>({profile:null,name,kind:'gap',fire});
+  const jobs=[
+    {id:'bookkeeping',name:'Buchhaltung (m/w/d)',score:'0,74',skills:[
+      same('p1',true),same('p3'),same('p5'),same('p6'),
+      similar('p2','SAP Finanzwesen (FI)',true),similar('p4','Kreditorenbuchhaltung'),
+      similar('p7','Spesenabrechnung'),similar('p8','Umsatzsteuerrecht'),
+      gap('Jahresabschlusserstellung',true),gap('Kostenstellenrechnung')
+    ]},
+    {id:'receivables',name:'Debitorenbuchhaltung (m/w/d)',score:'0,72',skills:[
+      same('p1'),same('p3'),same('p4',true),same('p5'),same('p10'),
+      similar('p2','SAP Finanzwesen (FI)',true),similar('p6','Jahresabschlusserstellung'),similar('p8','Umsatzsteuerrecht'),
+      gap('Mahnwesen',true),gap('Forderungsmanagement')
+    ]},
+    {id:'controlling',name:'Controlling (m/w/d)',score:'0,38',skills:[
+      same('p3'),same('p10'),similar('p1','Kostenrechnung',true),similar('p2','SAP Controlling (CO)'),similar('p6','Management Reporting'),
+      gap('Budgetplanung',true),gap('Forecasting'),gap('Kennzahlenanalyse'),gap('Microsoft Power BI',true),gap('Investitionsrechnung')
+    ]}
+  ];
+  jobs.forEach(job=>job.skills.forEach((skill,i)=>skill.id=`${job.id}-${i}`));
+  const current=jobs[0];
+  const saved=window.openai?.widgetState?.privateContent||{};
+  const paletteVersion='green-pair-v1';
+  const colors={pass:saved.paletteVersion===paletteVersion&&/^#[0-9a-f]{6}$/i.test(saved.pass)?saved.pass:'#c6e6d2',close:saved.paletteVersion===paletteVersion&&/^#[0-9a-f]{6}$/i.test(saved.close)?saved.close:'#e8f5ed'};
+  const meanings={pass:'Passt',close:'Ähnlich',gap:'Im Kandidatenprofil nicht angegeben',extra:'Zusätzlicher Kandidaten-Skill'};
+  function soften(name){return name.replace('Finanzbuchhaltung','Finanz\u00adbuchhaltung').replace('Debitorenbuchhaltung','Debitoren\u00adbuchhaltung').replace('Kreditorenbuchhaltung','Kreditoren\u00adbuchhaltung').replace('Reisekostenabrechnung','Reisekosten\u00adabrechnung').replace('Umsatzsteuervoranmeldung','Umsatzsteuer\u00advoranmeldung').replace('Jahresabschlusserstellung','Jahresabschluss\u00aderstellung').replace('Forderungsmanagement','Forderungs\u00admanagement').replace('Gehaltsabrechnung','Gehalts\u00adabrechnung').replace('Rechnungswesen','Rechnungs\u00adwesen');}
+  function marker(state){
+    if(state==='none')return null;
+    const span=document.createElement('span');span.className='jp-fire';span.dataset.fire=state;span.setAttribute('aria-hidden','true');
+    const icon=document.createElement('i');icon.dataset.lucide='flame';icon.className='jp-flame';icon.setAttribute('aria-hidden','true');span.append(icon);return span;
+  }
+  function makePill(skill,extra=false){
+    const candidate=extra?skill:byId.get(skill.profile);
+    const ownFire=Boolean(candidate?.fire),jobFire=extra?false:Boolean(skill.fire);
+    const state=ownFire?(jobFire?'both':'own'):(jobFire?'job':'none');
+    const el=document.createElement('div');el.className='jp-pill';el.dataset.kind=extra?'extra':skill.kind;
+    el.dataset.skill=skill.id;el.dataset.fire=state;
+    const row=document.createElement('span');row.className='jp-own-row';
+    const title=document.createElement('span');title.className='jp-own-name';title.textContent=soften(skill.name);row.append(title);
+    const fire=marker(state);
+    const fireInSecondLine=!extra&&skill.kind==='close'&&state==='own';
+    if(fire&&!fireInSecondLine)row.append(fire);el.append(row);
+    let label=extra?'Kandidaten-Skill: '+skill.name:'Job-Skill: '+skill.name+'. '+meanings[skill.kind]+'.';
+    if(!extra&&skill.kind==='close'){
+      el.classList.add('is-expanded');
+      const pair=document.createElement('span');pair.className='jp-job-inline';
+      const pairName=document.createElement('span');pairName.className='rc-candidate-name';pairName.textContent='Kandidat: '+soften(candidate.name);pair.append(pairName);
+      if(fireInSecondLine)pair.append(fire);el.append(pair);
+      label+=' Ähnlicher Kandidaten-Skill: '+candidate.name+'.';
+    }
+    const fireLabel=state==='both'?'Fire Skill auf beiden Seiten':state==='job'?'Wichtiger Job-Skill':state==='own'?'Besondere Stärke im Kandidatenprofil':'';
+    if(fireLabel){label+=' '+fireLabel+'.';el.setAttribute('data-tooltip',fireLabel);}
+    el.setAttribute('aria-label',label);return el;
+  }
+  function fitPairs(){
+    const pills=[...cloud.querySelectorAll('[data-kind="close"]')];
+    pills.forEach(el=>{el.classList.add('is-expanded');el.querySelector('.jp-job-inline').hidden=false;});
+  }
+  function applyColors(){app.style.setProperty('--jp-pass',colors.pass);app.style.setProperty('--jp-close',colors.close);}
+  function render(){
+    applyColors();root.querySelector('.sm-meta').textContent=current.name;
+    root.querySelector('.sm-score').textContent=current.score;
+    root.querySelector('.sm-score').setAttribute('aria-label','Beispielscore '+current.score+' von 1');
+    cloud.replaceChildren();extraCloud.replaceChildren();
+    const counts={pass:0,close:0,gap:0};
+    current.skills.forEach(skill=>{cloud.append(makePill(skill));counts[skill.kind]++;});
+    const used=new Set(current.skills.map(s=>s.profile).filter(Boolean));
+    const extraOrder=['p1','p3','p5','p6','p2','p4','p7','p8','p9','p10'];
+    extraOrder.filter(id=>!used.has(id)).forEach(id=>extraCloud.append(makePill(byId.get(id),true)));
+    root.querySelector('.rc-extra-section').hidden=extraCloud.children.length===0;
+    for(const kind of ['pass','close','gap']){const label=root.querySelector('[data-count="'+kind+'"]');label.textContent=String(counts[kind]);label.parentElement.hidden=counts[kind]===0;}
+    const coverage=root.querySelector('.sm-coverage');coverage.replaceChildren();
+    for(const kind of ['pass','close','gap'])for(let i=0;i<counts[kind];i++){const unit=document.createElement('span');unit.className='sm-unit';unit.dataset.status=kind;unit.setAttribute('aria-hidden','true');coverage.append(unit);}
+    const countNames={pass:'passen',close:'ähnlich',gap:'fehlen im Profil'};
+    coverage.setAttribute('aria-label','Zehn Job-Skills: '+['pass','close','gap'].filter(k=>counts[k]>0).map(k=>counts[k]+' '+countNames[k]).join(', ')+'.');
+    const importantOpen=current.skills.filter(s=>s.fire&&s.kind==='gap').length;
+    const priority=root.querySelector('.rc-priority');priority.hidden=importantOpen===0;priority.textContent=importantOpen===1?'1 wichtiger Skill fehlt':importantOpen+' wichtige Skills fehlen';
+    if(globalThis.lucide)lucide.createIcons({attrs:{width:14,height:14}});
+    fitPairs();
+  }
+  function save(){window.openai?.setWidgetState?.({modelContent:{design:'Recruiter-Perspektive mit Job-Skills zuerst und ähnlichen Kandidaten-Skills dauerhaft sichtbar',job:current.name,candidate:'Alex M. (Beispielprofil)',candidateSkillsVisible:true},privateContent:{paletteVersion,pass:colors.pass,close:colors.close}})?.catch(()=>{});}
+  window.addEventListener('openai:set_globals',event=>{const value=event.detail?.globals?.widgetState?.privateContent;if(value?.paletteVersion===paletteVersion){if(/^#[0-9a-f]{6}$/i.test(value.pass))colors.pass=value.pass;if(/^#[0-9a-f]{6}$/i.test(value.close))colors.close=value.close;applyColors();}});
+  render();
+  if(globalThis.Tweak){const tweak=new Tweak({container:app,onChange:()=>{applyColors();save();}});tweak.addColorPicker(colors,'pass',{label:'Passt',reference:'--jp-pass'});tweak.addColorPicker(colors,'close',{label:'Ähnlich',reference:'--jp-close'});}
+})();
+</script>
+
+
+
+</body></html>
+

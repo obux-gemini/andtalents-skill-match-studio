@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="&TALENTS Skill-Matching: Kandidaten- und Recruiter-Ansichten vergleichen und ihre Farben gemeinsam einstellen.">
+  <meta name="theme-color" content="#008f85">
+  <title>Skill Match Studio · &TALENTS</title>
+  <link rel="stylesheet" href="./studio.css?v=narrow-applications-20261029-5">
+  <script src="./studio.js?v=rect-buttons-20261029-6" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="wordmark" href="./" aria-label="&TALENTS Skill Match Studio"><img src="./assets/andtalents-logo.jpg" alt="&TALENTS" width="148" height="24"></a>
+    <span class="header-divider" aria-hidden="true"></span>
+    <span class="header-label">Designstudio</span>
+    <span class="private-note">Beispieldaten · keine Live-Matches</span>
+  </header>
+  <main class="workspace">
+    <aside class="palette-panel" aria-labelledby="palette-title">
+      <div class="panel-heading"><span class="eyebrow">Eine Palette für alle</span><h2 id="palette-title">Farben einstellen</h2></div>
+      <p class="panel-intro">Änderungen erscheinen sofort in allen Ansichten.</p>
+      <div id="primary-colors" class="color-fields"></div>
+      <details class="more-colors"><summary>Weitere Farben</summary><div id="secondary-colors" class="color-fields"></div></details>
+      <div class="palette-actions"><button id="reset-palette" type="button">Zurücksetzen</button><button id="copy-palette" type="button">Farbcodes kopieren</button></div>
+      <p id="palette-feedback" class="palette-feedback" role="status" aria-live="polite"></p>
+      <p class="local-note">Deine Palette wird nur in diesem Browser gespeichert.</p>
+      <div class="reading-key"><h3>So liest sich der Vergleich</h3><p>Grün: passt. Helleres Grün: ähnlich. Rosa: fehlt im Profil. Grau: zusätzlicher Profil-Skill.</p><p>Ähnliche Zuordnungen sind immer sichtbar. Kategorien mit 0 entfallen.</p></div>
+    </aside>
+    <section class="comparison" aria-labelledby="page-title">
+      <div class="page-heading"><div><span class="eyebrow">&TALENTS · Skill Matching</span><h1 id="page-title">Ein Vergleich. Verschiedene Perspektiven.</h1><p>Pillen und Listen im Handyformat 201:437 – mit einer gemeinsamen Farbsteuerung.</p></div></div>
+      <div class="filter-panel">
+        <fieldset><legend>Perspektive</legend><div class="segmented" id="role-filter"><button type="button" data-role="candidate" aria-pressed="true">Kandidat</button><button type="button" data-role="recruiter" aria-pressed="false">Recruiter</button><button type="button" data-role="all" aria-pressed="false">Beide</button></div></fieldset>
+        <fieldset><legend>Darstellung</legend><div class="segmented" id="format-filter"><button type="button" data-format="pills" aria-pressed="true">Pillen</button><button type="button" data-format="list" aria-pressed="false">Liste</button><button type="button" data-format="all" aria-pressed="false">Beide</button></div></fieldset>
+        <label class="job-select">Job<select id="job-filter"><option value="all">Alle Jobs</option><option value="extreme">Neue Extrembeispiele</option><option value="buchhaltung">Buchhaltung</option><option value="debitoren">Debitorenbuchhaltung</option><option value="controlling">Controlling</option><option value="finanzbuchhaltung">Finanzbuchhaltung</option><option value="bilanzbuchhaltung">Bilanzbuchhaltung</option><option value="softwareentwicklung">Softwareentwicklung</option></select></label>
+        <label class="special-toggle"><input id="special-filter" type="checkbox"> Sonderfälle zeigen</label>
+        <fieldset id="application-layout" hidden><legend>Recruiter-Ansicht</legend><div class="segmented" id="application-layout-filter"><button type="button" data-layout="comparison" aria-pressed="true">Vergleich</button><button type="button" data-layout="applications" aria-pressed="false">Bewerbungen untereinander</button></div></fieldset>
+      </div>
+      <div class="results-heading"><p id="result-count" role="status" aria-live="polite"></p><button type="button" id="show-all">Alle Ansichten zeigen</button></div>
+      <div id="view-grid" class="view-grid"></div>
+      <div id="empty-state" class="empty-state" hidden><h2>Keine Ansicht für diese Auswahl</h2><p>Ändere einen Filter oder zeige alle Ansichten.</p><button type="button" id="empty-show-all">Alle Ansichten zeigen</button></div>
+      <footer class="page-footer">Designvergleich mit Beispieldaten und illustrativen Scores.</footer>
+    </section>
+  </main>
+</body>
+</html>
