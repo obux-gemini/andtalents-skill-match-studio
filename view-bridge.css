@@ -6,6 +6,8 @@ body .jp-own-name,body .os-name-text{font-weight:600}
 body .jp-job-inline,body .os-profile,body .jd-summary{font-weight:400}
 body .sm-score.sm-score,body .os-score.os-score{display:inline-flex!important;align-items:center;justify-content:center;min-width:74.8px;min-height:37.4px;padding:5.95px 11.9px!important;border-radius:999px;background:var(--studio-score)!important;color:#fff!important;font-size:21.25px!important;font-weight:600;line-height:1.15!important;white-space:nowrap;font-variant-numeric:tabular-nums}
 body .sm-score-wrap,body .os-score-wrap{display:flex;flex-direction:column;align-items:center!important;gap:4px;flex:none;min-width:74.8px!important}
+body .sm-jobbar,body .os-jobbar{display:grid!important;grid-template-columns:minmax(0,1fr) max-content;align-items:start!important;gap:12px!important}
+body .sm-score-wrap,body .os-score-wrap{align-self:start!important;justify-self:end;margin-top:0!important}
 body .sm-score-label,body .os-score-label{font-size:9.35px!important}
 body .candidate-fixed-header{position:relative;z-index:2;flex:none;background:#fff;color:#19332f;font-family:var(--studio-font);border-bottom:1px solid #edf0ed;box-shadow:0 3px 8px #1d4b3508}
 body .candidate-fixed-summary{padding:13px 12px 0;font-size:14px;line-height:1.35}

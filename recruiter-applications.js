@@ -11,7 +11,7 @@
     const companies={buchhaltung:'Hanse Handel GmbH',debitoren:'Nordhafen Logistik GmbH',controlling:'Elbwerk Industrie GmbH',finanzbuchhaltung:'HanseFinanz Services GmbH',bilanzbuchhaltung:'Elbkontor Wirtschaftsprüfung GmbH',softwareentwicklung:'Nordlicht Software GmbH'};
     const rootId=shell.parentElement.id,jobId=Object.keys(companies).find(key=>rootId.endsWith('-'+key));
     const company=document.createElement('div');company.className='ra-company';company.textContent=companies[jobId]||companies.buchhaltung;company.setAttribute('aria-label','Unternehmen: '+company.textContent);
-    context.append(label,job,company);screen.prepend(context);
+    context.append(label,job,company);const score=document.querySelector('.sm-score-wrap,.os-score-wrap');if(score)context.append(score);screen.prepend(context);
     meta.textContent='Hamburg';meta.setAttribute('aria-label','Wohnort: Hamburg');
     main.querySelectorAll('.jd-summary,.jm-card').forEach(el=>el.remove());
     const dock=document.querySelector('.jm-dock');if(!dock)return;
