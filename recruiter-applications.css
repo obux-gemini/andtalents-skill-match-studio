@@ -15,3 +15,4 @@ body .ra-accept{border:1px solid var(--studio-accent);background:var(--studio-ac
 body .ra-decision svg{width:19px;height:19px;flex:none;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
 body .ra-decision[aria-pressed=true]{outline:2px solid #243d37;outline-offset:3px}
 body .ra-decision:focus-visible{outline:3px solid #243d37;outline-offset:3px}
+body .ra-application{--studio-fire:var(--studio-score)}
