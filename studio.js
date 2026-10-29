@@ -39,8 +39,8 @@
   for(const view of views){
     const card=document.createElement('article');card.className='view-card';card.dataset.view=view.id;if(view.role==='recruiter')card.classList.add('is-recruiter');
     const header=document.createElement('header'),copy=document.createElement('div'),title=document.createElement('h2'),meta=document.createElement('p'),tag=document.createElement('span');
-    title.textContent=view.title;meta.textContent=(view.role==='candidate'?'Kandidaten-Perspektive':'Recruiter-Perspektive')+' · '+(view.format==='pills'?'Pillen':'Liste');tag.className='view-tag';tag.textContent=view.special?'Sonderfall':'201:437';
-    copy.append(title,meta);header.append(copy,tag);const frame=document.createElement('iframe');frame.title=view.title+' – '+meta.textContent;frame.loading='lazy';if(window.STUDIO_DOCUMENTS?.[view.file])frame.srcdoc=window.STUDIO_DOCUMENTS[view.file];else frame.src=view.file+'?v=pinned-type-20261029-11';frame.dataset.view=view.id;frame.addEventListener('load',()=>sendPalette(frame));
+    title.textContent=view.title;meta.textContent=(view.role==='candidate'?'Kandidaten-Perspektive':'Recruiter-Perspektive')+' · '+(view.format==='pills'?'Pillen':'Liste');tag.className='view-tag';tag.textContent=view.special?'Sonderfall':'iPhone 16';
+    copy.append(title,meta);header.append(copy,tag);const frame=document.createElement('iframe');frame.title=view.title+' – '+meta.textContent;frame.loading='lazy';if(window.STUDIO_DOCUMENTS?.[view.file])frame.srcdoc=window.STUDIO_DOCUMENTS[view.file];else frame.src=view.file+'?v=iphone16-20261029-12';frame.dataset.view=view.id;frame.addEventListener('load',()=>sendPalette(frame));
     card.append(header,frame);grid.append(card);view.card=card;frames.set(view.id,frame);
   }
   window.addEventListener('message',event=>{

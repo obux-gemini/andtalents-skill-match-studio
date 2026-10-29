@@ -10,11 +10,11 @@ button,input,select,textarea{font-family:var(--studio-font)}
 @media(max-width:760px){.site-header{height:62px;padding-inline:18px;gap:13px}.wordmark{font-size:21px}.private-note{display:none}.workspace{display:block;padding:18px;max-width:600px}.palette-panel{position:static;margin-bottom:28px}.panel-heading h2{font-size:19px}.panel-intro{margin-bottom:16px}.color-fields{grid-template-columns:1fr 1fr;gap:14px}.color-code{width:100%}.more-colors{margin-top:18px}.palette-actions{grid-template-columns:1fr 1fr}.reading-key{display:none}.page-heading h1{font-size:28px}.filter-panel{padding:13px;gap:14px}.special-toggle{flex:1 1 100%;min-height:30px}.view-grid{grid-template-columns:1fr;gap:22px}.view-card{padding:14px 8px 16px}.view-card header{padding-inline:4px}.results-heading{align-items:center}.view-tag{display:none}.job-select select{max-width:100%}}
 @media(max-width:360px){.workspace{padding:12px}.palette-panel{padding:15px}.color-field{grid-template-columns:34px minmax(0,1fr);gap:8px}.color-picker{width:34px;height:38px}.color-field label{font-size:12px}.segmented button{padding-inline:8px}.view-card{padding-inline:5px}.page-heading h1{font-size:25px}.filter-panel fieldset{max-width:100%}}
 @media(prefers-reduced-motion:no-preference){button{transition:background-color .15s,color .15s}}
-.view-card.is-recruiter{background:transparent;border:0;padding:0;max-width:414px}
+.view-card.is-recruiter{background:transparent;border:0;padding:0;max-width:393px}
 .view-card.is-recruiter>header{display:none}
-.view-card.is-recruiter iframe{max-width:414px}
-.view-grid.is-application-list{grid-template-columns:minmax(0,1fr);max-width:414px;margin-inline:auto;gap:24px}
-.view-grid.is-application-list .view-card.is-recruiter{max-width:414px}
+.view-card.is-recruiter iframe{max-width:393px}
+.view-grid.is-application-list{grid-template-columns:minmax(0,1fr);max-width:393px;margin-inline:auto;gap:24px}
+.view-grid.is-application-list .view-card.is-recruiter{max-width:393px}
 body.is-recruiter-view{background:#fff;min-height:100vh}
 .font-panel{border-bottom:1px solid var(--line);padding:0 0 20px;margin:0 0 22px}
 .font-panel h3{font-size:13px;font-weight:600;margin:0 0 10px}
@@ -33,3 +33,6 @@ body[data-font-scale]:not([data-font-scale="1"]) .palette-actions button{padding
 body[data-font-scale]:not([data-font-scale="1"]) .job-select{min-width:0;max-width:100%}
 body[data-font-scale]:not([data-font-scale="1"]) .job-select select{min-width:0;width:100%;max-width:100%}
 body[data-font-scale]:not([data-font-scale="1"]) .page-heading h1{overflow-wrap:anywhere}
+.view-grid:not(.is-application-list){grid-template-columns:repeat(auto-fit,minmax(min(100%,435px),1fr))}
+.view-card:not(.is-recruiter){max-width:435px}
+.view-card:not(.is-recruiter) iframe{max-width:405px}

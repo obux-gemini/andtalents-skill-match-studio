@@ -22,7 +22,7 @@
   function fitMap(){
     const app=document.querySelector('.jp-app,.os-app');if(app)document.body.classList.toggle('jm-scrollable',app.scrollHeight>app.clientHeight+1);
   }
-  function fitPreview(){const shell=document.querySelector('.ip-shell');if(shell)shell.style.zoom=String(Math.min(1,innerWidth/414));fitMap();report();}
+  function fitPreview(){const shell=document.querySelector('.ip-shell'),width=document.body.dataset.perspective==='candidate'?405:393;if(shell)shell.style.zoom=String(Math.min(1,innerWidth/width));fitMap();report();}
   window.addEventListener('resize',fitPreview);
   document.addEventListener('andtalents:typography-updated',()=>requestAnimationFrame(fitPreview));
   function renderFire(){
@@ -91,6 +91,7 @@
     if(document.body.dataset.perspective!=='candidate')return;
     const screen=document.querySelector('.ip-screen'),app=document.querySelector('.jp-app,.os-app'),brand=app?.querySelector('.jp-brandbar,.os-brand'),jobbar=app?.querySelector('.sm-jobbar,.os-jobbar'),overview=app?.querySelector('.sm-overview,.os-overview');
     if(!screen||!app||!brand||!jobbar||!overview)return;
+    document.querySelector('.ip-shell').setAttribute('aria-label','iPhone 16 – Display 393 mal 852 Bildpunkte');
     const pinned=document.createElement('div');pinned.className='candidate-fixed-header';pinned.setAttribute('aria-label','Angepinnter Job und Skill-Match');
     const appStyle=getComputedStyle(app);for(const property of appStyle)if(/^--(?:jp|os)-/.test(property))pinned.style.setProperty(property,appStyle.getPropertyValue(property));
     const summary=document.createElement('div');summary.className='candidate-fixed-summary';summary.append(jobbar,overview);pinned.append(brand,summary);app.before(pinned);fitPreview();

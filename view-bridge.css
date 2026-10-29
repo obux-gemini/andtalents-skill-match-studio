@@ -46,7 +46,8 @@ body .ip-screen .jp-app,body .ip-screen .os-app{overflow-x:hidden!important;over
 body .fs-flame{width:14px;height:14px;flex:none;color:var(--studio-fire);stroke:currentColor;fill:none;stroke-width:2}
 body .fs-flame{fill:none!important}
 body .fs-flame.is-filled{fill:currentColor!important}
-body[data-fire-mode=bar] .ip-shell{width:414px!important;max-width:none!important}
+body[data-fire-mode=bar] .ip-shell{width:405px!important;max-width:none!important}
+body[data-perspective=candidate] .ip-screen{aspect-ratio:393 / 852!important}
 body .fs-marked-bar{padding-top:19px;overflow:visible!important}
 body .fs-marked-bar>.sm-unit,body .fs-marked-bar>.os-unit{position:relative;height:10.5px!important;overflow:visible!important}
 body .fs-bar-marker{position:absolute;bottom:calc(100% + 3px);left:50%;transform:translateX(-50%);display:flex}
