@@ -4,17 +4,10 @@ body .ra-application .ip-status,body .ra-application .ip-home,body .ra-applicati
 body .ra-application .ip-screen .jp-app,body .ra-application .ip-screen .os-app{flex:none!important;height:auto!important;overflow:visible!important}
 body .ra-application .ra-dock{position:static;box-shadow:none;padding:14px 16px;background:#fafcfb;border-top:1px solid #e3ebe7}
 body .ra-application .ra-dock .jm-feedback{position:static;margin:12px 0 0;box-shadow:none;pointer-events:auto}
-body .ra-job-context{margin:0;padding:14px 12px;background:#f5f8f7;border-bottom:1px solid #e3ebe7;font-family:var(--studio-font);display:grid;grid-template-columns:minmax(0,1fr) max-content;align-items:start;column-gap:12px}
+body .ra-job-context{margin:0;padding:14px 12px;background:#f5f8f7;border-bottom:1px solid #e3ebe7;font-family:var(--studio-font)}
 body .ra-job-context-label{font-size:11px;line-height:1.4;color:#61716b;margin-bottom:4px}
 body .ra-job-title{font-size:14px;line-height:1.4;font-weight:600;margin:0;overflow-wrap:break-word;hyphens:auto}
 body .ra-company{margin-top:5px;color:#61716b;font-size:12px;line-height:1.4;overflow-wrap:break-word}
-body .ra-job-context-label,body .ra-job-title,body .ra-company{grid-column:1}
-body .ra-job-context-label{grid-row:1;min-height:0}
-body .ra-job-title{grid-row:2}
-body .ra-company{grid-row:3}
-body .ra-job-context>.sm-score-wrap,body .ra-job-context>.os-score-wrap{grid-column:2;grid-row:1 / span 3;align-self:start!important;justify-self:end}
-body .ra-job-context .sm-score-label{color:#69727b}
-body .ra-job-context .os-score-label{color:#677773}
 body .ra-decisions{display:flex;gap:12px;justify-content:center}
 body .ra-decision{display:flex;align-items:center;justify-content:center;gap:8px;flex:1;min-width:0;min-height:46px;padding:10px 12px;border-radius:8px;font-size:12px;font-weight:600;line-height:1.25;white-space:nowrap;cursor:pointer}
 body .ra-decision-label{display:block;flex:none;white-space:nowrap}
